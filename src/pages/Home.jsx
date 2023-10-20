@@ -2,69 +2,34 @@ import { Box, Grid, Typography } from '@mui/material'
 
 import { useTheme } from '@emotion/react'
 
-import CssIcon from '../assets/css3-plain.svg'
-import JavascriptIcon from '../assets/javascript-plain.svg'
-import MaterialUiIcon from '../assets/materialui-plain.svg'
-import NodeJsIcon from '../assets/nodejs-plain.svg'
-import PostgresIcon from '../assets/postgresql-plain.svg'
-import ReactIcon from '../assets/react-original.svg'
-import FigmaIcon from '../assets/figma-plain.svg'
-import GitIcon from '../assets/git-plain.svg'
+import Title from '../components/Title'
+import IconContainer from '../components/IconContainer'
+import ProjectCard from '../components/ProjectCard'
+import FullPageGridItem from '../components/FullPageGridItem'
 
-import BootstrapIcon from '../assets/bootstrap-plain.svg'
-import DockerIcon from '../assets/docker-plain.svg'
-import JavaIcon from '../assets/java-plain.svg'
-import KotlinIcon from '../assets/kotlin-plain.svg'
-import MysqlIcon from '../assets/mysql-plain.svg'
-import PhpIcon from '../assets/php-plain.svg'
-import SequelizeIcon from '../assets/sequelize-plain.svg'
-import TypescriptIcon from '../assets/typescript-plain.svg'
+import CssIcon from '../assets/icons/css3-plain.svg'
+import JavascriptIcon from '../assets/icons/javascript-plain.svg'
+import MaterialUiIcon from '../assets/icons/materialui-plain.svg'
+import NodeJsIcon from '../assets/icons/nodejs-plain.svg'
+import PostgresIcon from '../assets/icons/postgresql-plain.svg'
+import ReactIcon from '../assets/icons/react-original.svg'
+import FigmaIcon from '../assets/icons/figma-plain.svg'
+import GitIcon from '../assets/icons/git-plain.svg'
 
-function CustomGridItem({ height, sx, children }) {
-  return (
-    <Grid
-      item
-      xs={12}
-      sx={{
-        height: height || '100%',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        ...sx,
-      }}
-    >
-      {children}
-    </Grid>
-  )
-}
+import BootstrapIcon from '../assets/icons/bootstrap-plain.svg'
+import DockerIcon from '../assets/icons/docker-plain.svg'
+import JavaIcon from '../assets/icons/java-plain.svg'
+import KotlinIcon from '../assets/icons/kotlin-plain.svg'
+import MysqlIcon from '../assets/icons/mysql-plain.svg'
+import PhpIcon from '../assets/icons/php-plain.svg'
+import SequelizeIcon from '../assets/icons/sequelize-plain.svg'
+import TypescriptIcon from '../assets/icons/typescript-plain.svg'
 
-function Title({ children }) {
-  return (
-    <Box>
-      <Typography
-        sx={{
-          fontSize: 40,
-          fontWeight: 500,
-          fontFamily: 'permanent marker',
-        }}
-      >
-        {children}
-      </Typography>
-      <Box sx={{ width: '100%', height: 5, background: 'blueviolet' }} />
-    </Box>
-  )
-}
+import GithubIcon from '../assets/icons/github.svg'
+import LinkedinIcon from '../assets/icons/linkedin.svg'
 
-function IconContainer({ text, children }) {
-  return (
-    <Grid item xs={3} sx={{ display: 'flex', justifyContent: 'center' }}>
-      <Box sx={{ textAlign: 'center' }}>
-        {children}
-        <Typography sx={{ textAlign: 'center' }}>{text}</Typography>
-      </Box>
-    </Grid>
-  )
-}
+import WBWLImage from '../assets/images/wordsbutwithletters.png'
+import PortfolioImage from '../assets/images/PortfolioPage.png'
 
 function Home() {
   const theme = useTheme()
@@ -79,16 +44,19 @@ function Home() {
         background: 'black',
       }}
     >
-      <Box id="stars" />
-      <Box id="stars2" />
-      <Box id="stars3" />
+      <Box sx={{ maxWidth: 2000, margin: 'auto' }}>
+        <Box id="stars" />
+        <Box id="stars2" />
+        <Box id="stars3" />
+      </Box>
+
       <Grid
         container
         justifyContent="center"
         alignItems="stretch"
         sx={{ height: '100%', overflowY: 'auto' }}
       >
-        <CustomGridItem sx={{ gap: 4 }}>
+        <FullPageGridItem sx={{ gap: 4 }}>
           <Box sx={{ textAlign: 'center' }}>
             <Typography
               sx={{
@@ -109,8 +77,8 @@ function Home() {
               Software Engineer
             </Typography>
           </Box>
-        </CustomGridItem>
-        <CustomGridItem>
+        </FullPageGridItem>
+        <FullPageGridItem>
           <Box
             sx={{
               background: theme.palette.background,
@@ -139,7 +107,7 @@ function Home() {
                 container
                 item
                 justifyContent="center"
-                sx={{ width: '100%', gap: 12 }}
+                sx={{ width: '100%', gap: { xs: 0, sm: 12 }, padding: 2 }}
                 xs={8}
               >
                 <Grid item sx={{ maxWidth: 500 }}>
@@ -166,8 +134,8 @@ function Home() {
               </Grid>
             </Grid>
           </Box>
-        </CustomGridItem>
-        <CustomGridItem>
+        </FullPageGridItem>
+        <FullPageGridItem>
           <Box
             sx={{
               background: theme.palette.background,
@@ -192,7 +160,12 @@ function Home() {
               >
                 <Title>Skills</Title>
               </Grid>
-              <Grid container item xs={8}>
+              <Grid
+                container
+                item
+                xs={8}
+                sx={{ '&.MuiGrid-item': { maxWidth: 1600 } }}
+              >
                 <IconContainer text="React">
                   <img
                     src={ReactIcon}
@@ -264,8 +237,8 @@ function Home() {
               Other Languages Used During My Professional Career
             </Typography>
           </Box>
-        </CustomGridItem>
-        <CustomGridItem>
+        </FullPageGridItem>
+        <FullPageGridItem>
           <Box
             sx={{
               background: theme.palette.background,
@@ -290,7 +263,12 @@ function Home() {
               >
                 <Title>Other Skills</Title>
               </Grid>
-              <Grid container item xs={8}>
+              <Grid
+                container
+                item
+                xs={8}
+                sx={{ '&.MuiGrid-item': { maxWidth: 1600 } }}
+              >
                 <IconContainer text="Bootstrap">
                   <img
                     src={BootstrapIcon}
@@ -358,19 +336,126 @@ function Home() {
               </Grid>
             </Grid>
           </Box>
-        </CustomGridItem>
-        <CustomGridItem height={64}>
+        </FullPageGridItem>
+        <FullPageGridItem
+          sx={{
+            height: {
+              xs: 'fit-content',
+              xl: '100%',
+            },
+          }}
+        >
+          <Box
+            sx={{
+              background: theme.palette.background,
+              height: '100%',
+              width: '100%',
+              zIndex: 1,
+            }}
+          >
+            <Grid
+              container
+              justifyContent="center"
+              alignItems="center"
+              direction="column"
+              sx={{ width: '100%', height: '100%' }}
+            >
+              <Grid
+                container
+                justifyContent="center"
+                alignItems="center"
+                item
+                xs={4}
+              >
+                <Title>Projects</Title>
+              </Grid>
+              <Grid
+                container
+                item
+                xs={8}
+                sx={{
+                  height: '100%',
+                  padding: {
+                    xs: 4,
+                    xl: 0,
+                  },
+                }}
+                justifyContent="center"
+              >
+                <Grid
+                  container
+                  sx={{
+                    direction: { xs: 'column', lg: 'row' },
+                    gap: { xs: 2 },
+                    maxWidth: 1600,
+                  }}
+                  justifyContent="space-around"
+                >
+                  <ProjectCard
+                    title="Words but with Letters"
+                    body="Word game actively being developed with a friend"
+                    chips={['React', 'Node']}
+                    image={
+                      <img
+                        src={WBWLImage}
+                        style={{ height: 200, background: 'black' }}
+                      />
+                    }
+                  />
+                  <ProjectCard
+                    title="React Portfolio"
+                    body="I created the portfolio that this page is using"
+                    chips={['React', 'CSS', 'Javascript']}
+                    image={
+                      <img
+                        src={PortfolioImage}
+                        style={{ height: 200, background: 'black' }}
+                      />
+                    }
+                  />
+                  <ProjectCard
+                    title="React Snake"
+                    body="I snake game made with React for my kids"
+                    chips={['React', 'CSS', 'Javascript']}
+                    image={
+                      <img
+                        src={PortfolioImage}
+                        style={{ height: 200, background: 'black' }}
+                      />
+                    }
+                  />
+                </Grid>
+              </Grid>
+            </Grid>
+          </Box>
+        </FullPageGridItem>
+        <FullPageGridItem height={64}>
           <Box
             sx={{
               background: 'rebeccapurple',
               height: '100%',
               width: '100%',
               zIndex: 1,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: 4,
             }}
           >
-            Footer
+            <img
+              src={GithubIcon}
+              className="logo Github"
+              alt="Github logo"
+              style={{ height: 40, fill: 'white' }}
+            />
+            <img
+              src={LinkedinIcon}
+              className="logo Linkedin"
+              alt="Linkedin logo"
+              style={{ height: 40, fill: 'white' }}
+            />
           </Box>
-        </CustomGridItem>
+        </FullPageGridItem>
       </Grid>
     </Box>
   )

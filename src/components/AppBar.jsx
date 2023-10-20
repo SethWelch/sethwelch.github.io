@@ -16,12 +16,12 @@ import { AppBar as MuiAppBar } from '@mui/material'
 import React from 'react'
 import MenuIcon from '@mui/icons-material/Menu'
 
+import PropTypes from 'prop-types'
+
 const drawerWidth = 240
 const navItems = ['Home', 'About', 'Contact']
 
-function AppBar(props) {
-  // eslint-disable-next-line react/prop-types
-  const { window } = props
+function AppBar({ window }) {
   const [mobileOpen, setMobileOpen] = React.useState(false)
 
   const handleDrawerToggle = () => {
@@ -107,6 +107,14 @@ function AppBar(props) {
       </nav>
     </>
   )
+}
+
+AppBar.propTypes = {
+  window: PropTypes.node,
+}
+
+AppBar.defaultProps = {
+  window: undefined,
 }
 
 export default AppBar
