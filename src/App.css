@@ -1,31 +1,78 @@
-/*--------------star animation--------------------*/
-
 html {
   height: 100%;
+  width: 100%;
   overflow: hidden;
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
 }
 
-#title {
+/*--------------react logo-------------------------*/
+
+.container {
+  width: 205px;
+  height: 205px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.react-logo {
+  display: inline-block;
+  border-radius: 50%;
+  border: 10px solid #00d8ff;
+
+  animation-name: rotate;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.react-logo,
+.react-logo:before,
+.react-logo:after {
   position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  color: #fff;
-  text-align: center;
-  font-family: Lato;
-  font-weight: 300;
-  font-size: 50px;
-  letter-spacing: 10px;
-  margin-top: -60px;
-  padding-left: 10px;
+  display: inline-block;
+  width: 200px;
+  height: 70px;
+  border-radius: 50%;
+  border: 10px solid #00d8ff;
 }
 
-#title span {
-  background: -webkit-linear-gradient(white, #38495a);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.nucleo,
+.react-logo,
+.react-logo:before,
+.react-logo:after {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.nucleo {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background: #00d8ff;
+}
+
+.react-logo:before,
+.react-logo:after {
+  content: '';
+}
+
+.react-logo:after {
+  transform: rotate(-57deg);
+}
+
+.react-logo:before {
+  transform: rotate(57deg);
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------star animation--------------------*/
 
 #stars {
   width: 1px;
