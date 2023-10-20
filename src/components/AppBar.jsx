@@ -19,9 +19,14 @@ import MenuIcon from '@mui/icons-material/Menu'
 import PropTypes from 'prop-types'
 
 const drawerWidth = 240
-const navItems = ['Home', 'About', 'Contact']
+const navItems = [
+  { label: 'About', id: 'about-me-box' },
+  { label: 'Skills', id: 'skills-box' },
+  { label: 'Projects', id: 'projects-box' },
+]
 
-function AppBar({ window }) {
+function AppBar(props) {
+  const { window } = props
   const [mobileOpen, setMobileOpen] = React.useState(false)
 
   const handleDrawerToggle = () => {
@@ -35,6 +40,19 @@ function AppBar({ window }) {
     localStorage.setItem('theme', newTheme)
   }
 
+  const scrollToComponent = (event, id) => {
+    const anchor = (event.target.ownerDocument || document).querySelector(
+      `#${id}`
+    )
+
+    if (anchor) {
+      anchor.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+      })
+    }
+  }
+
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
@@ -43,12 +61,12 @@ function AppBar({ window }) {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
+          <ListItem key={item.label} disablePadding>
             <ListItemButton
               sx={{ textAlign: 'center' }}
-              onClick={() => changeTheme()}
+              onClick={(e) => scrollToComponent(e, item.id)}
             >
-              <ListItemText primary={item} />
+              <ListItemText primary={item.label} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -75,11 +93,11 @@ function AppBar({ window }) {
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
               <Button
-                key={item}
+                key={item.label}
                 sx={{ color: '#fff' }}
-                onClick={() => changeTheme()}
+                onClick={(e) => scrollToComponent(e, item.id)}
               >
-                {item}
+                {item.label}
               </Button>
             ))}
           </Box>

@@ -37,9 +37,9 @@ function Home() {
   return (
     <Box
       sx={{
-        height: 'calc(100vh - 64px)',
+        height: 'calc(100vh - 56px)',
         width: '100vw',
-        mt: 6,
+        mt: 7,
         overflow: 'hidden',
         background: 'black',
       }}
@@ -80,6 +80,7 @@ function Home() {
         </FullPageGridItem>
         <FullPageGridItem>
           <Box
+            id="about-me-box"
             sx={{
               background: theme.palette.background,
               height: '100%',
@@ -137,6 +138,7 @@ function Home() {
         </FullPageGridItem>
         <FullPageGridItem>
           <Box
+            id="skills-box"
             sx={{
               background: theme.palette.background,
               height: '100%',
@@ -346,6 +348,7 @@ function Home() {
           }}
         >
           <Box
+            id="projects-box"
             sx={{
               background: theme.palette.background,
               height: '100%',
