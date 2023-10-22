@@ -28,6 +28,7 @@ const navItems = [
   { label: 'About', id: 'about-me-box' },
   { label: 'Projects', id: 'projects-box' },
   { label: 'Skills', id: 'skills-box' },
+  { label: 'Additional Skills', id: 'skills-box-2' },
 ]
 
 function AppBar(props) {

@@ -309,10 +309,15 @@ function Home() {
                 container
                 justifyContent="center"
                 alignItems="center"
+                direction="column"
                 item
                 xs={4}
+                sx={{ gap: 3 }}
               >
                 <Title>Skills</Title>
+                <Typography sx={{ width: 400, textAlign: 'center' }}>
+                  Skills that I am very familiar with and use almost daily.
+                </Typography>
               </Grid>
               <Grid
                 container
@@ -386,14 +391,11 @@ function Home() {
                 </IconContainer>
               </Grid>
             </Grid>
-
-            <Typography>
-              Other Languages Used During My Professional Career
-            </Typography>
           </Box>
         </FullPageGridItem>
         <FullPageGridItem>
           <Box
+            id="skills-box-2"
             sx={{
               background: theme.palette.background,
               height: '100%',
@@ -412,10 +414,16 @@ function Home() {
                 container
                 justifyContent="center"
                 alignItems="center"
+                direction="column"
                 item
                 xs={4}
+                sx={{ gap: 3 }}
               >
-                <Title>Other Skills</Title>
+                <Title>Additional Skills</Title>
+                <Typography sx={{ width: 400, textAlign: 'center' }}>
+                  Skills that I have used throughout my career, but am not as
+                  familiar with.
+                </Typography>
               </Grid>
               <Grid
                 container

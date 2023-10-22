@@ -27,7 +27,9 @@ function ProjectCard({ title, body, chips, links, image }) {
         <Typography sx={{ fontWeight: '600', fontSize: 20 }}>
           {title}
         </Typography>
-        <Typography sx={{ mt: 0.5, fontSize: 16 }}>{body}</Typography>
+        <Typography sx={{ mt: 0.5, fontSize: 16, height: 48 }}>
+          {body}
+        </Typography>
         <Box
           sx={{
             display: 'flex',
