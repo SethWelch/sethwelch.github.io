@@ -2,7 +2,7 @@ import { Grid } from '@mui/material'
 
 import PropTypes from 'prop-types'
 
-function FullPageGridItem({ height, sx, children }) {
+function FullPageGridItem({ height, sx, children, ...rest }) {
   return (
     <Grid
       item
@@ -14,6 +14,7 @@ function FullPageGridItem({ height, sx, children }) {
         justifyContent: 'center',
         ...sx,
       }}
+      {...rest}
     >
       {children}
     </Grid>

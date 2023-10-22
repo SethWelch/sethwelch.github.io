@@ -1,8 +1,11 @@
+import { useTheme } from '@emotion/react'
 import { Box, Typography } from '@mui/material'
 
 import PropTypes from 'prop-types'
 
 function Title({ children }) {
+  const theme = useTheme()
+
   return (
     <Box>
       <Typography
@@ -10,7 +13,7 @@ function Title({ children }) {
           fontSize: 40,
           fontWeight: 500,
           fontFamily: 'permanent marker',
-          color: 'white',
+          color: theme.palette.mode === 'light' ? 'black' : 'white',
         }}
       >
         {children}

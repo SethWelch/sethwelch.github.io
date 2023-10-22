@@ -1,48 +1,21 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+
+import { RecoilRoot } from 'recoil'
 import { BrowserRouter } from 'react-router-dom'
-import AppBar from './components/AppBar.jsx'
-import { ThemeProvider, createTheme } from '@mui/material/styles'
-import CssBaseline from '@mui/material/CssBaseline'
+
+import App from './App.jsx'
 
 import '@fontsource/permanent-marker'
 
-const darkTheme = createTheme({
-  palette: {
-    mode: 'dark',
-    background: '#27272A',
-  },
-  components: {
-    MuiAppBar: {
-      styleOverrides: {
-        root: {
-          background: '#2b2f32',
-        },
-      },
-    },
-  },
-})
+const root = ReactDOM.createRoot(document.getElementById('root'))
 
-const lightTheme = createTheme({
-  palette: {
-    mode: 'light',
-  },
-})
-
-const selectedTheme = localStorage.getItem('theme')
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <ThemeProvider
-    theme={selectedTheme && selectedTheme === 'light' ? lightTheme : darkTheme}
-  >
-    <React.StrictMode>
-      <BrowserRouter>
-        <CssBaseline />
-        <AppBar />
+root.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <RecoilRoot>
         <App />
-      </BrowserRouter>
-    </React.StrictMode>
-  </ThemeProvider>
+      </RecoilRoot>
+    </BrowserRouter>
+  </React.StrictMode>
 )
