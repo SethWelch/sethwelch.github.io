@@ -39,12 +39,11 @@ function Home() {
       sx={{
         height: 'calc(100vh - 56px)',
         width: '100vw',
-        mt: 7,
         overflow: 'hidden',
         background: theme.palette.mode === 'light' ? 'space' : 'black',
       }}
     >
-      <Box sx={{ maxWidth: 2000, margin: 'auto' }}>
+      <Box sx={{ maxWidth: 2000, margin: 'auto', height: 0 }}>
         <Box id="stars" />
         <Box id="stars2" />
         <Box id="stars3" />

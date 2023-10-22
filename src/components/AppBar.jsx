@@ -83,7 +83,7 @@ function AppBar(props) {
 
   return (
     <>
-      <MuiAppBar component="nav">
+      <MuiAppBar component="nav" sx={{ position: 'relative' }}>
         <Toolbar sx={{ position: 'relative' }}>
           <IconButton
             color="inherit"
