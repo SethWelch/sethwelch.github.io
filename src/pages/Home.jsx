@@ -40,7 +40,6 @@ function Home() {
         height: 'calc(100vh - 56px)',
         width: '100vw',
         overflow: 'hidden',
-        background: theme.palette.mode === 'light' ? 'space' : 'black',
       }}
     >
       <Box sx={{ maxWidth: 2000, margin: 'auto', height: 0 }}>
@@ -55,7 +54,13 @@ function Home() {
         alignItems="stretch"
         sx={{ height: '100%', overflowY: 'auto' }}
       >
-        <FullPageGridItem sx={{ gap: 4 }}>
+        <FullPageGridItem
+          sx={{
+            gap: 4,
+            background:
+              theme.palette.mode === 'light' ? 'currentColor' : 'black',
+          }}
+        >
           <Box sx={{ textAlign: 'center' }}>
             <Typography
               sx={{
