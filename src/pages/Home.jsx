@@ -132,7 +132,7 @@ function Home() {
             id="about-me-box"
             sx={{
               background: theme.palette.background,
-              height: '100%',
+              height: '100vh',
               width: '100%',
               zIndex: 1,
             }}
@@ -216,7 +216,7 @@ function Home() {
                 justifyContent="center"
                 alignItems="center"
                 item
-                sx={{ minHeight: 200 }}
+                // sx={{ minHeight: 200 }}
               >
                 <Title>Recent Projects</Title>
               </Grid>
@@ -226,7 +226,7 @@ function Home() {
                 sx={{
                   height: '100%',
                   maxHeight: { xs: 1600, lg: 600 },
-                  minHeight: 600,
+                  minHeight: 450,
                 }}
                 justifyContent="center"
                 alignItems="center"

@@ -1,8 +1,11 @@
+import { useTheme } from '@emotion/react'
 import { Grid } from '@mui/material'
 
 import PropTypes from 'prop-types'
 
 function FullPageGridItem({ height, sx, children, ...rest }) {
+  const theme = useTheme()
+
   return (
     <Grid
       item
@@ -12,6 +15,8 @@ function FullPageGridItem({ height, sx, children, ...rest }) {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        minHeight: '100vh',
+        background: theme.palette.background,
         ...sx,
       }}
       {...rest}
