@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from '@mui/material'
+import { Box, Grid, IconButton, Typography } from '@mui/material'
 
 import { useTheme } from '@emotion/react'
 
@@ -13,7 +13,7 @@ import MaterialUiIcon from '../assets/icons/materialui-plain.svg'
 import NodeJsIcon from '../assets/icons/nodejs-plain.svg'
 import PostgresIcon from '../assets/icons/postgresql-plain.svg'
 import ReactIcon from '../assets/icons/react-original.svg'
-import FigmaIcon from '../assets/icons/figma-plain.svg'
+import FigmaOriginal from '../assets/icons/figma-original.svg'
 import GitIcon from '../assets/icons/git-plain.svg'
 
 import BootstrapIcon from '../assets/icons/bootstrap-plain.svg'
@@ -21,7 +21,7 @@ import DockerIcon from '../assets/icons/docker-plain.svg'
 import JavaIcon from '../assets/icons/java-plain.svg'
 import KotlinIcon from '../assets/icons/kotlin-plain.svg'
 import MysqlIcon from '../assets/icons/mysql-plain.svg'
-import PhpIcon from '../assets/icons/php-plain.svg'
+import ReduxIcon from '../assets/icons/redux-original.svg'
 import SequelizeIcon from '../assets/icons/sequelize-plain.svg'
 import TypescriptIcon from '../assets/icons/typescript-plain.svg'
 
@@ -41,7 +41,7 @@ function Home() {
         width: '100vw',
         mt: 7,
         overflow: 'hidden',
-        background: 'black',
+        background: theme.palette.mode === 'light' ? 'space' : 'black',
       }}
     >
       <Box sx={{ maxWidth: 2000, margin: 'auto' }}>
@@ -63,6 +63,7 @@ function Home() {
                 fontSize: '4rem',
                 fontWeight: 500,
                 fontFamily: 'permanent marker',
+                color: 'white',
               }}
             >
               Seth Welch
@@ -72,13 +73,57 @@ function Home() {
                 fontSize: '2rem',
                 fontWeight: 500,
                 fontFamily: 'monospace',
+                color: 'white',
               }}
             >
               Software Engineer
             </Typography>
+            <Box
+              sx={{ display: 'flex', gap: 2, justifyContent: 'center', mt: 2 }}
+            >
+              <IconButton
+                aria-label="linkedin link"
+                onClick={() =>
+                  window.open(
+                    'https://www.linkedin.com/in/seth-welch-89910897',
+                    '_blank'
+                  )
+                }
+              >
+                <img
+                  src={LinkedinIcon}
+                  className="logo Linkedin"
+                  alt="Linkedin logo"
+                  style={{ height: 40, fill: 'white' }}
+                />
+              </IconButton>
+              <IconButton
+                aria-label="github link"
+                onClick={() =>
+                  window.open('https://github.com/SethWelch', '_blank')
+                }
+              >
+                <img
+                  src={GithubIcon}
+                  className="logo Github"
+                  alt="Github logo"
+                  style={{ height: 40, fill: 'white' }}
+                />
+              </IconButton>
+            </Box>
           </Box>
         </FullPageGridItem>
-        <FullPageGridItem>
+        <FullPageGridItem
+          sx={{
+            height: {
+              xs: 'max-content',
+              sm: '100%',
+              md: '100%',
+              lg: '100%',
+              xl: '100%',
+            },
+          }}
+        >
           <Box
             id="about-me-box"
             sx={{
@@ -101,6 +146,7 @@ function Home() {
                 alignItems="center"
                 item
                 xs={4}
+                sx={{ minHeight: 200 }}
               >
                 <Title>About Me</Title>
               </Grid>
@@ -121,7 +167,7 @@ function Home() {
                   </Typography>
                   <Typography>
                     I am a husband and a father of three kids. My hobbies
-                    include retro electronics and video games, soldering, and
+                    include retro electronics, video games, soldering, and
                     camping.
                   </Typography>
                 </Grid>
@@ -131,6 +177,107 @@ function Home() {
                       <span className="nucleo"></span>
                     </span>
                   </div>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Box>
+        </FullPageGridItem>
+        <FullPageGridItem
+          sx={{
+            height: {
+              xs: 'max-content',
+              lg: '100%',
+              xl: '100%',
+            },
+          }}
+        >
+          <Box
+            id="projects-box"
+            sx={{
+              background: theme.palette.background,
+              height: '100%',
+              width: '100%',
+              zIndex: 1,
+            }}
+          >
+            <Grid
+              container
+              justifyContent="center"
+              alignItems="center"
+              direction="column"
+              sx={{ width: '100%', height: '100%' }}
+            >
+              <Grid
+                container
+                justifyContent="center"
+                alignItems="center"
+                item
+                sx={{ minHeight: 200 }}
+              >
+                <Title>Recent Projects</Title>
+              </Grid>
+              <Grid
+                container
+                item
+                sx={{
+                  height: '100%',
+                  maxHeight: { xs: 1600, lg: 600 },
+                  minHeight: 600,
+                }}
+                justifyContent="center"
+                alignItems="center"
+              >
+                <Grid
+                  container
+                  sx={{
+                    direction: { xs: 'column', lg: 'row' },
+                    gap: { xs: 2 },
+                    maxWidth: 1600,
+                  }}
+                  justifyContent="space-around"
+                >
+                  <ProjectCard
+                    title="Words but with Letters"
+                    body="Word game actively being developed with a friend"
+                    chips={['React', 'Node']}
+                    links={['https://wordsbutwithletters.com']}
+                    image={
+                      <img
+                        src={WBWLImage}
+                        style={{ height: 200, background: 'black' }}
+                      />
+                    }
+                  />
+                  <ProjectCard
+                    title="React Portfolio"
+                    body="The portfolio project that this page is using"
+                    chips={['React', 'CSS', 'Javascript', 'Recoil']}
+                    links={[
+                      'https://www.sethwelch.com',
+                      'https://github.com/SethWelch/sethwelch.github.io',
+                    ]}
+                    image={
+                      <img
+                        src={PortfolioImage}
+                        style={{ height: 200, background: 'black' }}
+                      />
+                    }
+                  />
+                  <ProjectCard
+                    title="React Snake"
+                    body="A snake game made with React for my kids"
+                    chips={['React', 'CSS', 'Javascript']}
+                    links={[
+                      'https://www.svoze.com',
+                      'https://github.com/SethWelch/Snake',
+                    ]}
+                    image={
+                      <img
+                        src={PortfolioImage}
+                        style={{ height: 200, background: 'black' }}
+                      />
+                    }
+                  />
                 </Grid>
               </Grid>
             </Grid>
@@ -166,7 +313,7 @@ function Home() {
                 container
                 item
                 xs={8}
-                sx={{ '&.MuiGrid-item': { maxWidth: 1600 } }}
+                sx={{ '&.MuiGrid-item': { maxWidth: 1200 } }}
               >
                 <IconContainer text="React">
                   <img
@@ -218,17 +365,17 @@ function Home() {
                 </IconContainer>
                 <IconContainer text="Figma">
                   <img
-                    src={FigmaIcon}
+                    src={FigmaOriginal}
                     className="logo figma"
                     alt="Figma logo"
                     style={{ height: 60 }}
                   />
                 </IconContainer>
-                <IconContainer text="Git">
+                <IconContainer text="Redux">
                   <img
-                    src={GitIcon}
-                    className="logo git"
-                    alt="Git logo"
+                    src={ReduxIcon}
+                    className="logo Redux"
+                    alt="Redux logo"
                     style={{ height: 60 }}
                   />
                 </IconContainer>
@@ -269,7 +416,7 @@ function Home() {
                 container
                 item
                 xs={8}
-                sx={{ '&.MuiGrid-item': { maxWidth: 1600 } }}
+                sx={{ '&.MuiGrid-item': { maxWidth: 1200 } }}
               >
                 <IconContainer text="Bootstrap">
                   <img
@@ -311,14 +458,6 @@ function Home() {
                     style={{ height: 60 }}
                   />
                 </IconContainer>
-                <IconContainer text="PHP">
-                  <img
-                    src={PhpIcon}
-                    className="logo PHP"
-                    alt="PHP logo"
-                    style={{ height: 60 }}
-                  />
-                </IconContainer>
                 <IconContainer text="Sequelize">
                   <img
                     src={SequelizeIcon}
@@ -335,128 +474,16 @@ function Home() {
                     style={{ height: 60 }}
                   />
                 </IconContainer>
+                <IconContainer text="Git">
+                  <img
+                    src={GitIcon}
+                    className="logo git"
+                    alt="Git logo"
+                    style={{ height: 60 }}
+                  />
+                </IconContainer>
               </Grid>
             </Grid>
-          </Box>
-        </FullPageGridItem>
-        <FullPageGridItem
-          sx={{
-            height: {
-              xs: 'fit-content',
-              xl: '100%',
-            },
-          }}
-        >
-          <Box
-            id="projects-box"
-            sx={{
-              background: theme.palette.background,
-              height: '100%',
-              width: '100%',
-              zIndex: 1,
-            }}
-          >
-            <Grid
-              container
-              justifyContent="center"
-              alignItems="center"
-              direction="column"
-              sx={{ width: '100%', height: '100%' }}
-            >
-              <Grid
-                container
-                justifyContent="center"
-                alignItems="center"
-                item
-                xs={4}
-              >
-                <Title>Projects</Title>
-              </Grid>
-              <Grid
-                container
-                item
-                xs={8}
-                sx={{
-                  height: '100%',
-                  padding: {
-                    xs: 4,
-                    xl: 0,
-                  },
-                }}
-                justifyContent="center"
-              >
-                <Grid
-                  container
-                  sx={{
-                    direction: { xs: 'column', lg: 'row' },
-                    gap: { xs: 2 },
-                    maxWidth: 1600,
-                  }}
-                  justifyContent="space-around"
-                >
-                  <ProjectCard
-                    title="Words but with Letters"
-                    body="Word game actively being developed with a friend"
-                    chips={['React', 'Node']}
-                    image={
-                      <img
-                        src={WBWLImage}
-                        style={{ height: 200, background: 'black' }}
-                      />
-                    }
-                  />
-                  <ProjectCard
-                    title="React Portfolio"
-                    body="I created the portfolio that this page is using"
-                    chips={['React', 'CSS', 'Javascript']}
-                    image={
-                      <img
-                        src={PortfolioImage}
-                        style={{ height: 200, background: 'black' }}
-                      />
-                    }
-                  />
-                  <ProjectCard
-                    title="React Snake"
-                    body="I snake game made with React for my kids"
-                    chips={['React', 'CSS', 'Javascript']}
-                    image={
-                      <img
-                        src={PortfolioImage}
-                        style={{ height: 200, background: 'black' }}
-                      />
-                    }
-                  />
-                </Grid>
-              </Grid>
-            </Grid>
-          </Box>
-        </FullPageGridItem>
-        <FullPageGridItem height={64}>
-          <Box
-            sx={{
-              background: 'rebeccapurple',
-              height: '100%',
-              width: '100%',
-              zIndex: 1,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: 4,
-            }}
-          >
-            <img
-              src={GithubIcon}
-              className="logo Github"
-              alt="Github logo"
-              style={{ height: 40, fill: 'white' }}
-            />
-            <img
-              src={LinkedinIcon}
-              className="logo Linkedin"
-              alt="Linkedin logo"
-              style={{ height: 40, fill: 'white' }}
-            />
           </Box>
         </FullPageGridItem>
       </Grid>

@@ -18,25 +18,29 @@ import MenuIcon from '@mui/icons-material/Menu'
 
 import PropTypes from 'prop-types'
 
+import Brightness4Icon from '@mui/icons-material/Brightness4'
+import { useRecoilState } from 'recoil'
+import { themeState } from '../recoil/atom/themeAtom'
+
 const drawerWidth = 240
 const navItems = [
   { label: 'About', id: 'about-me-box' },
-  { label: 'Skills', id: 'skills-box' },
   { label: 'Projects', id: 'projects-box' },
+  { label: 'Skills', id: 'skills-box' },
 ]
 
 function AppBar(props) {
   const { window } = props
   const [mobileOpen, setMobileOpen] = React.useState(false)
+  const [theme, setTheme] = useRecoilState(themeState)
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState)
   }
 
   const changeTheme = () => {
-    const selectedTheme = localStorage.getItem('theme')
-    const newTheme =
-      selectedTheme && selectedTheme === 'light' ? 'dark' : 'light'
+    const newTheme = theme && theme === 'light' ? 'dark' : 'light'
+    setTheme(newTheme)
     localStorage.setItem('theme', newTheme)
   }
 
@@ -48,7 +52,7 @@ function AppBar(props) {
     if (anchor) {
       anchor.scrollIntoView({
         behavior: 'smooth',
-        block: 'nearest',
+        block: 'start',
       })
     }
   }
@@ -80,7 +84,7 @@ function AppBar(props) {
   return (
     <>
       <MuiAppBar component="nav">
-        <Toolbar>
+        <Toolbar sx={{ position: 'relative' }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -101,6 +105,12 @@ function AppBar(props) {
               </Button>
             ))}
           </Box>
+          <IconButton
+            sx={{ position: 'absolute', right: 25 }}
+            onClick={changeTheme}
+          >
+            <Brightness4Icon sx={{ fill: 'white' }} />
+          </IconButton>
         </Toolbar>
       </MuiAppBar>
       <nav>
