@@ -193,6 +193,7 @@ function Home() {
               lg: '100%',
               xl: '100%',
             },
+            zIndex: 1,
           }}
         >
           <Box
@@ -216,7 +217,7 @@ function Home() {
                 justifyContent="center"
                 alignItems="center"
                 item
-                // sx={{ minHeight: 200 }}
+                sx={{ mb: { xs: 10, xl: 0 } }}
               >
                 <Title>Recent Projects</Title>
               </Grid>

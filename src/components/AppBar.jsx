@@ -21,6 +21,7 @@ import PropTypes from 'prop-types'
 import Brightness4Icon from '@mui/icons-material/Brightness4'
 import { useRecoilState } from 'recoil'
 import { themeState } from '../recoil/atom/themeAtom'
+import { useTheme } from '@emotion/react'
 
 const drawerWidth = 240
 const navItems = [
@@ -33,6 +34,8 @@ function AppBar(props) {
   const { window } = props
   const [mobileOpen, setMobileOpen] = React.useState(false)
   const [theme, setTheme] = useRecoilState(themeState)
+
+  const muiTheme = useTheme()
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState)
@@ -125,6 +128,7 @@ function AppBar(props) {
           sx={{
             display: { xs: 'block', sm: 'none' },
             '& .MuiDrawer-paper': {
+              background: muiTheme.palette.background,
               boxSizing: 'border-box',
               width: drawerWidth,
             },
