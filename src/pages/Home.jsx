@@ -30,6 +30,7 @@ import LinkedinIcon from '../assets/icons/linkedin.svg'
 
 import WBWLImage from '../assets/images/wordsbutwithletters.png'
 import PortfolioImage from '../assets/images/PortfolioPage.png'
+import SnakeImage from '../assets/images/Snake.png'
 
 function Home() {
   const theme = useTheme()
@@ -278,7 +279,7 @@ function Home() {
                     ]}
                     image={
                       <img
-                        src={PortfolioImage}
+                        src={SnakeImage}
                         style={{ height: 200, background: 'black' }}
                       />
                     }

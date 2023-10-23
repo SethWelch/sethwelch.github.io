@@ -22,7 +22,7 @@ function ProjectCard({ title, body, chips, links, image }) {
         },
       }}
     >
-      {image}
+      <Box sx={{ display: 'flex', justifyContent: 'center' }}>{image}</Box>
       <Box sx={{ padding: 1 }}>
         <Typography sx={{ fontWeight: '600', fontSize: 20 }}>
           {title}
