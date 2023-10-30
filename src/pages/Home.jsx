@@ -31,6 +31,7 @@ import LinkedinIcon from '../assets/icons/linkedin.svg'
 import WBWLImage from '../assets/images/wordsbutwithletters.png'
 import PortfolioImage from '../assets/images/PortfolioPage.png'
 import SnakeImage from '../assets/images/Snake.png'
+import WindowsImage from '../assets/images/Windows98.png'
 
 function Home() {
   const theme = useTheme()
@@ -227,7 +228,7 @@ function Home() {
                 item
                 sx={{
                   height: '100%',
-                  maxHeight: { xs: 1600, lg: 600 },
+                  maxHeight: { xs: 2000, lg: 600 },
                   minHeight: 450,
                 }}
                 justifyContent="center"
@@ -245,7 +246,7 @@ function Home() {
                   <ProjectCard
                     title="Words but with Letters"
                     body="Word game actively being developed with a friend"
-                    chips={['React', 'Node']}
+                    chips={['React', 'Node', 'PostgreSQL', 'Javascript']}
                     links={['https://wordsbutwithletters.com']}
                     image={
                       <img
@@ -280,6 +281,21 @@ function Home() {
                     image={
                       <img
                         src={SnakeImage}
+                        style={{ height: 200, background: 'black' }}
+                      />
+                    }
+                  />
+                  <ProjectCard
+                    title="Windows 98"
+                    body="Creating a Windows 98 clone for fun"
+                    chips={['React', 'CSS', 'Typescript']}
+                    links={[
+                      'https://windows1998.vercel.app',
+                      'https://github.com/SethWelch/Windows98',
+                    ]}
+                    image={
+                      <img
+                        src={WindowsImage}
                         style={{ height: 200, background: 'black' }}
                       />
                     }
