@@ -198,8 +198,8 @@ function Home() {
               zIndex: 1,
             }}
           >
+            <Title>Recent Projects</Title>
             <Grid container item justifyContent="center" alignItems="center">
-              <Title>Recent Projects</Title>
               <Grid
                 container
                 sx={{
