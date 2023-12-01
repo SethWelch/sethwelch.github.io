@@ -1,50 +1,51 @@
-import { Box, Grid, IconButton, Typography } from '@mui/material'
+import { Box, Grid, IconButton, Typography } from "@mui/material";
 
-import { useTheme } from '@emotion/react'
+import { useTheme } from "@emotion/react";
 
-import Title from '../components/Title'
-import IconContainer from '../components/IconContainer'
-import ProjectCard from '../components/ProjectCard'
-import FullPageGridItem from '../components/FullPageGridItem'
+import Title from "../components/Title";
+import IconContainer from "../components/IconContainer";
+import ProjectCard from "../components/ProjectCard";
+import FullPageGridItem from "../components/FullPageGridItem";
 
-import CssIcon from '../assets/icons/css3-plain.svg'
-import JavascriptIcon from '../assets/icons/javascript-plain.svg'
-import MaterialUiIcon from '../assets/icons/materialui-plain.svg'
-import NodeJsIcon from '../assets/icons/nodejs-plain.svg'
-import PostgresIcon from '../assets/icons/postgresql-plain.svg'
-import ReactIcon from '../assets/icons/react-original.svg'
-import FigmaOriginal from '../assets/icons/figma-original.svg'
-import GitIcon from '../assets/icons/git-plain.svg'
+import CssIcon from "../assets/icons/css3-plain.svg";
+import JavascriptIcon from "../assets/icons/javascript-plain.svg";
+import MaterialUiIcon from "../assets/icons/materialui-plain.svg";
+import NodeJsIcon from "../assets/icons/nodejs-plain.svg";
+import PostgresIcon from "../assets/icons/postgresql-plain.svg";
+import ReactIcon from "../assets/icons/react-original.svg";
+import FigmaOriginal from "../assets/icons/figma-original.svg";
+import GitIcon from "../assets/icons/git-plain.svg";
 
-import BootstrapIcon from '../assets/icons/bootstrap-plain.svg'
-import DockerIcon from '../assets/icons/docker-plain.svg'
-import JavaIcon from '../assets/icons/java-plain.svg'
-import KotlinIcon from '../assets/icons/kotlin-plain.svg'
-import MysqlIcon from '../assets/icons/mysql-plain.svg'
-import ReduxIcon from '../assets/icons/redux-original.svg'
-import SequelizeIcon from '../assets/icons/sequelize-plain.svg'
-import TypescriptIcon from '../assets/icons/typescript-plain.svg'
+import BootstrapIcon from "../assets/icons/bootstrap-plain.svg";
+import DockerIcon from "../assets/icons/docker-plain.svg";
+import JavaIcon from "../assets/icons/java-plain.svg";
+import KotlinIcon from "../assets/icons/kotlin-plain.svg";
+import MysqlIcon from "../assets/icons/mysql-plain.svg";
+import ReduxIcon from "../assets/icons/redux-original.svg";
+import SequelizeIcon from "../assets/icons/sequelize-plain.svg";
+import TypescriptIcon from "../assets/icons/typescript-plain.svg";
 
-import GithubIcon from '../assets/icons/github.svg'
-import LinkedinIcon from '../assets/icons/linkedin.svg'
+import GithubIcon from "../assets/icons/github.svg";
+import LinkedinIcon from "../assets/icons/linkedin.svg";
 
-import WBWLImage from '../assets/images/wordsbutwithletters.png'
-import PortfolioImage from '../assets/images/PortfolioPage.png'
-import SnakeImage from '../assets/images/Snake.png'
-import WindowsImage from '../assets/images/Windows98.png'
+import WBWLImage from "../assets/images/wordsbutwithletters.png";
+import PortfolioImage from "../assets/images/PortfolioPage.png";
+import SnakeImage from "../assets/images/Snake.png";
+import WindowsImage from "../assets/images/Windows98.png";
+import Image2048 from "../assets/images/2048.png";
 
 function Home() {
-  const theme = useTheme()
+  const theme = useTheme();
 
   return (
     <Box
       sx={{
-        height: 'calc(100vh - 56px)',
-        width: '100vw',
-        overflow: 'hidden',
+        height: "calc(100vh - 56px)",
+        width: "100vw",
+        overflow: "hidden",
       }}
     >
-      <Box sx={{ maxWidth: 2000, margin: 'auto', height: 0 }}>
+      <Box sx={{ maxWidth: 2000, margin: "auto", height: 0 }}>
         <Box id="stars" />
         <Box id="stars2" />
         <Box id="stars3" />
@@ -54,45 +55,45 @@ function Home() {
         container
         justifyContent="center"
         alignItems="stretch"
-        sx={{ height: '100%', overflowY: 'auto' }}
+        sx={{ height: "100%", overflowY: "auto" }}
       >
         <FullPageGridItem
           sx={{
             gap: 4,
             background:
-              theme.palette.mode === 'light' ? 'currentColor' : 'black',
+              theme.palette.mode === "light" ? "currentColor" : "black",
           }}
         >
-          <Box sx={{ textAlign: 'center' }}>
+          <Box sx={{ textAlign: "center" }}>
             <Typography
               sx={{
-                fontSize: '4rem',
+                fontSize: "4rem",
                 fontWeight: 500,
-                fontFamily: 'permanent marker',
-                color: 'white',
+                fontFamily: "permanent marker",
+                color: "white",
               }}
             >
               Seth Welch
             </Typography>
             <Typography
               sx={{
-                fontSize: '2rem',
+                fontSize: "2rem",
                 fontWeight: 500,
-                fontFamily: 'monospace',
-                color: 'white',
+                fontFamily: "monospace",
+                color: "white",
               }}
             >
               Software Engineer
             </Typography>
             <Box
-              sx={{ display: 'flex', gap: 2, justifyContent: 'center', mt: 2 }}
+              sx={{ display: "flex", gap: 2, justifyContent: "center", mt: 2 }}
             >
               <IconButton
                 aria-label="linkedin link"
                 onClick={() =>
                   window.open(
-                    'https://www.linkedin.com/in/seth-welch-89910897',
-                    '_blank'
+                    "https://www.linkedin.com/in/seth-welch-89910897",
+                    "_blank"
                   )
                 }
               >
@@ -100,20 +101,20 @@ function Home() {
                   src={LinkedinIcon}
                   className="logo Linkedin"
                   alt="Linkedin logo"
-                  style={{ height: 40, fill: 'white' }}
+                  style={{ height: 40, fill: "white" }}
                 />
               </IconButton>
               <IconButton
                 aria-label="github link"
                 onClick={() =>
-                  window.open('https://github.com/SethWelch', '_blank')
+                  window.open("https://github.com/SethWelch", "_blank")
                 }
               >
                 <img
                   src={GithubIcon}
                   className="logo Github"
                   alt="Github logo"
-                  style={{ height: 40, fill: 'white' }}
+                  style={{ height: 40, fill: "white" }}
                 />
               </IconButton>
             </Box>
@@ -121,22 +122,20 @@ function Home() {
         </FullPageGridItem>
         <FullPageGridItem
           sx={{
-            height: {
-              xs: 'max-content',
-              sm: '100%',
-              md: '100%',
-              lg: '100%',
-              xl: '100%',
-            },
+            height: "max-content",
           }}
         >
           <Box
             id="about-me-box"
             sx={{
               background: theme.palette.background,
-              height: '100vh',
-              width: '100%',
+              height: "100%",
+              width: "100%",
+              minHeight: "100vh",
               zIndex: 1,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
             <Grid
@@ -144,26 +143,22 @@ function Home() {
               justifyContent="center"
               alignItems="center"
               direction="column"
-              sx={{ width: '100%', height: '100%' }}
+              sx={{ width: "100%", height: "100%" }}
             >
-              <Grid
-                container
-                justifyContent="center"
-                alignItems="center"
-                item
-                xs={4}
-                sx={{ minHeight: 200 }}
-              >
-                <Title>About Me</Title>
-              </Grid>
+              <Title>About Me</Title>
               <Grid
                 container
                 item
                 justifyContent="center"
-                sx={{ width: '100%', gap: { xs: 0, sm: 12 }, padding: 2 }}
+                sx={{
+                  width: "100%",
+                  gap: { xs: 0, sm: 12 },
+                  padding: 2,
+                  mt: 2,
+                }}
                 xs={8}
               >
-                <Grid item sx={{ maxWidth: 500 }}>
+                <Grid item sx={{ maxWidth: 500, mb: 4 }}>
                   <Typography sx={{ mb: 4 }}>
                     I am a Full Stack Software Engineer that specializes in
                     Frontend Development. Throughout my career, I have had the
@@ -190,11 +185,7 @@ function Home() {
         </FullPageGridItem>
         <FullPageGridItem
           sx={{
-            height: {
-              xs: 'max-content',
-              lg: '100%',
-              xl: '100%',
-            },
+            height: "max-content",
             zIndex: 1,
           }}
         >
@@ -202,105 +193,95 @@ function Home() {
             id="projects-box"
             sx={{
               background: theme.palette.background,
-              height: '100%',
-              width: '100%',
+              height: "100%",
+              width: "100%",
               zIndex: 1,
             }}
           >
-            <Grid
-              container
-              justifyContent="center"
-              alignItems="center"
-              direction="column"
-              sx={{ width: '100%', height: '100%' }}
-            >
+            <Grid container item justifyContent="center" alignItems="center">
+              <Title>Recent Projects</Title>
               <Grid
                 container
-                justifyContent="center"
-                alignItems="center"
-                item
-                sx={{ mb: { xs: 10, xl: 0 } }}
-              >
-                <Title>Recent Projects</Title>
-              </Grid>
-              <Grid
-                container
-                item
                 sx={{
-                  height: '100%',
-                  maxHeight: { xs: 2000, lg: 600 },
-                  minHeight: 450,
+                  direction: { xs: "column", lg: "row" },
+                  gap: { xs: 2 },
+                  maxWidth: 2000,
+                  mt: 4,
                 }}
-                justifyContent="center"
-                alignItems="center"
+                justifyContent="space-around"
               >
-                <Grid
-                  container
-                  sx={{
-                    direction: { xs: 'column', lg: 'row' },
-                    gap: { xs: 2 },
-                    maxWidth: 1600,
-                  }}
-                  justifyContent="space-around"
-                >
-                  <ProjectCard
-                    title="Words but with Letters"
-                    body="Word game actively being developed with a friend"
-                    chips={['React', 'Node', 'PostgreSQL', 'Javascript']}
-                    links={['https://wordsbutwithletters.com']}
-                    image={
-                      <img
-                        src={WBWLImage}
-                        style={{ height: 200, background: 'black' }}
-                      />
-                    }
-                  />
-                  <ProjectCard
-                    title="React Portfolio"
-                    body="The portfolio project that this page is using"
-                    chips={['React', 'CSS', 'Javascript', 'Recoil']}
-                    links={[
-                      'https://www.sethwelch.com',
-                      'https://github.com/SethWelch/sethwelch.github.io',
-                    ]}
-                    image={
-                      <img
-                        src={PortfolioImage}
-                        style={{ height: 200, background: 'black' }}
-                      />
-                    }
-                  />
-                  <ProjectCard
-                    title="React Snake"
-                    body="A snake game made with React for my kids"
-                    chips={['React', 'CSS', 'Javascript']}
-                    links={[
-                      'https://www.svoze.com',
-                      'https://github.com/SethWelch/Snake',
-                    ]}
-                    image={
-                      <img
-                        src={SnakeImage}
-                        style={{ height: 200, background: 'black' }}
-                      />
-                    }
-                  />
-                  <ProjectCard
-                    title="Windows 98"
-                    body="Creating a Windows 98 clone for fun"
-                    chips={['React', 'CSS', 'Typescript']}
-                    links={[
-                      'https://windows1998.vercel.app',
-                      'https://github.com/SethWelch/Windows98',
-                    ]}
-                    image={
-                      <img
-                        src={WindowsImage}
-                        style={{ height: 200, background: 'black' }}
-                      />
-                    }
-                  />
-                </Grid>
+                <ProjectCard
+                  title="Words but with Letters"
+                  body="Word game actively being developed with a friend"
+                  chips={["React", "Node", "PostgreSQL", "Javascript"]}
+                  links={["https://wordsbutwithletters.com"]}
+                  image={
+                    <img
+                      src={WBWLImage}
+                      style={{ height: 200, background: "black" }}
+                    />
+                  }
+                />
+                <ProjectCard
+                  title="React Portfolio"
+                  body="The portfolio project that this page is using"
+                  chips={["React", "CSS", "Javascript", "Recoil"]}
+                  links={[
+                    "https://www.sethwelch.com",
+                    "https://github.com/SethWelch/sethwelch.github.io",
+                  ]}
+                  image={
+                    <img
+                      src={PortfolioImage}
+                      style={{ height: 200, background: "black" }}
+                    />
+                  }
+                />
+                <ProjectCard
+                  title="React Snake"
+                  body="A snake game made with React for my kids"
+                  chips={["React", "CSS", "Javascript"]}
+                  links={[
+                    "https://www.svoze.com",
+                    "https://github.com/SethWelch/Snake",
+                  ]}
+                  image={
+                    <img
+                      src={SnakeImage}
+                      style={{ height: 200, background: "black" }}
+                    />
+                  }
+                />
+                <ProjectCard
+                  title="Windows 98"
+                  body="Creating a Windows 98 clone for fun"
+                  chips={["React", "CSS", "Typescript"]}
+                  links={[
+                    "https://windows1998.vercel.app",
+                    "https://github.com/SethWelch/Windows98",
+                  ]}
+                  image={
+                    <img
+                      src={WindowsImage}
+                      style={{ height: 200, background: "black" }}
+                    />
+                  }
+                />
+                <ProjectCard
+                  title="2048"
+                  body="Recreating 2048"
+                  chips={["React", "CSS", "Typescript", "Vite"]}
+                  links={[
+                    "https://www.sethwelch.com/2048",
+                    "https://github.com/SethWelch/2048",
+                  ]}
+                  image={
+                    <img
+                      src={Image2048}
+                      style={{ height: 200, background: "black" }}
+                    />
+                  }
+                />
               </Grid>
             </Grid>
           </Box>
@@ -310,8 +291,8 @@ function Home() {
             id="skills-box"
             sx={{
               background: theme.palette.background,
-              height: '100%',
-              width: '100%',
+              height: "100%",
+              width: "100%",
               zIndex: 1,
             }}
           >
@@ -320,7 +301,7 @@ function Home() {
               justifyContent="center"
               alignItems="center"
               direction="column"
-              sx={{ width: '100%', height: '100%' }}
+              sx={{ width: "100%", height: "100%" }}
             >
               <Grid
                 container
@@ -332,7 +313,7 @@ function Home() {
                 sx={{ gap: 3 }}
               >
                 <Title>Skills</Title>
-                <Typography sx={{ width: 400, textAlign: 'center' }}>
+                <Typography sx={{ width: 400, textAlign: "center" }}>
                   Skills that I am very familiar with and use almost daily.
                 </Typography>
               </Grid>
@@ -340,7 +321,7 @@ function Home() {
                 container
                 item
                 xs={8}
-                sx={{ '&.MuiGrid-item': { maxWidth: 1200 } }}
+                sx={{ "&.MuiGrid-item": { maxWidth: 1200 } }}
               >
                 <IconContainer text="React">
                   <img
@@ -415,8 +396,8 @@ function Home() {
             id="skills-box-2"
             sx={{
               background: theme.palette.background,
-              height: '100%',
-              width: '100%',
+              height: "100%",
+              width: "100%",
               zIndex: 1,
             }}
           >
@@ -425,7 +406,7 @@ function Home() {
               justifyContent="center"
               alignItems="center"
               direction="column"
-              sx={{ width: '100%', height: '100%' }}
+              sx={{ width: "100%", height: "100%" }}
             >
               <Grid
                 container
@@ -437,7 +418,7 @@ function Home() {
                 sx={{ gap: 3 }}
               >
                 <Title>Additional Skills</Title>
-                <Typography sx={{ width: 400, textAlign: 'center' }}>
+                <Typography sx={{ width: 400, textAlign: "center" }}>
                   Skills that I have used throughout my career, but am not as
                   familiar with.
                 </Typography>
@@ -446,7 +427,7 @@ function Home() {
                 container
                 item
                 xs={8}
-                sx={{ '&.MuiGrid-item': { maxWidth: 1200 } }}
+                sx={{ "&.MuiGrid-item": { maxWidth: 1200 } }}
               >
                 <IconContainer text="Bootstrap">
                   <img
@@ -518,7 +499,7 @@ function Home() {
         </FullPageGridItem>
       </Grid>
     </Box>
-  )
+  );
 }
 
-export default Home
+export default Home;
