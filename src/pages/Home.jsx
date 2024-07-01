@@ -211,18 +211,6 @@ function Home() {
                 justifyContent="space-around"
               >
                 <ProjectCard
-                  title="Words but with Letters"
-                  body="Word game actively being developed with a friend"
-                  chips={["React", "Node", "PostgreSQL", "Javascript"]}
-                  links={["https://wordsbutwithletters.com"]}
-                  image={
-                    <img
-                      src={WBWLImage}
-                      style={{ height: 200, background: "black" }}
-                    />
-                  }
-                />
-                <ProjectCard
                   title="React Portfolio"
                   body="The portfolio project that this page is using"
                   chips={["React", "CSS", "Javascript", "Recoil"]}
