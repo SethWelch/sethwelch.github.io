@@ -376,8 +376,8 @@ function Home() {
               }}
             >
               I build products end-to-end and lead the teams that ship them.
-              With a full stack background and experience as a founding engineer
-              and team lead, I&apos;m focused on growing into engineering leadership.
+              Full stack background, founding engineer experience, and a track
+              record of getting things built.
             </Typography>
             <Box
               sx={{
