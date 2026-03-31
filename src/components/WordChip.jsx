@@ -9,9 +9,8 @@ function WordChip({ children }) {
   return (
     <Box
       sx={{
-        background:
-          theme.palette.mode === 'light' ? 'darkslateblue' : 'darkcyan',
-        color: 'white',
+        background: theme.palette.primary.main,
+        color: theme.palette.getContrastText(theme.palette.primary.main),
         width: 'fit-content',
         padding: '2px 8px',
         borderRadius: 2,

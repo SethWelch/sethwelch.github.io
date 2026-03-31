@@ -5,52 +5,85 @@ import Home from "./pages/Home.jsx";
 import "./App.css";
 import { ThemeProvider, createTheme } from "@mui/material";
 import AppBar from "./components/AppBar.jsx";
-import React, { createContext, useState } from "react";
+import { createContext, useState } from "react";
 
 import CssBaseline from "@mui/material/CssBaseline";
 
 export const ThemeContext = createContext(null);
 
-const darkTheme = createTheme({
-  palette: {
-    mode: "dark",
-    background: "#27272A",
-    color: "white",
-  },
-  components: {
-    MuiAppBar: {
-      styleOverrides: {
-        root: {
-          background: "#2b2f32",
-        },
+export const THEMES = {
+  cosmos: {
+    label: "Cosmos",
+    swatch: "#64ffda",
+    muiTheme: createTheme({
+      palette: {
+        mode: "dark",
+        primary: { main: "#64ffda" },
+        background: { default: "#0a0a14", paper: "#1a1a2e" },
+        text: { primary: "#e0e0ff" },
       },
-    },
-  },
-});
-
-const lightTheme = createTheme({
-  palette: {
-    mode: "light",
-    background: "lightgoldenrodyellow",
-    color: "black",
-  },
-  components: {
-    MuiAppBar: {
-      styleOverrides: {
-        root: {
-          background: "rebeccapurple",
-        },
+      components: {
+        MuiAppBar: { styleOverrides: { root: { background: "#0d0d1f" } } },
       },
-    },
+    }),
   },
-});
+  synthwave: {
+    label: "Synthwave",
+    swatch: "#ff2d78",
+    muiTheme: createTheme({
+      palette: {
+        mode: "dark",
+        primary: { main: "#ff2d78" },
+        background: { default: "#0f0020", paper: "#1e0040" },
+        text: { primary: "#f0e6ff" },
+      },
+      components: {
+        MuiAppBar: { styleOverrides: { root: { background: "#1a0030" } } },
+      },
+    }),
+  },
+  nord: {
+    label: "Nord",
+    swatch: "#88c0d0",
+    muiTheme: createTheme({
+      palette: {
+        mode: "dark",
+        primary: { main: "#88c0d0" },
+        background: { default: "#2e3440", paper: "#3b4252" },
+        text: { primary: "#eceff4" },
+      },
+      components: {
+        MuiAppBar: { styleOverrides: { root: { background: "#252a33" } } },
+      },
+    }),
+  },
+  slate: {
+    label: "Slate",
+    swatch: "#7c3aed",
+    muiTheme: createTheme({
+      palette: {
+        mode: "light",
+        primary: { main: "#7c3aed" },
+        background: { default: "#f1f0f7", paper: "#ffffff" },
+        text: { primary: "#1a1a2e" },
+      },
+      components: {
+        MuiAppBar: { styleOverrides: { root: { background: "#7c3aed" } } },
+      },
+    }),
+  },
+};
 
 export default function App() {
-  const [mode, setMode] = useState(() => localStorage.getItem('theme') ?? 'dark');
+  const [themeName, setThemeName] = useState(
+    () => localStorage.getItem("theme") ?? "cosmos"
+  );
+
+  const theme = THEMES[themeName]?.muiTheme ?? THEMES.cosmos.muiTheme;
 
   return (
-    <ThemeContext.Provider value={{ mode, setMode }}>
-      <ThemeProvider theme={mode === "light" ? lightTheme : darkTheme}>
+    <ThemeContext.Provider value={{ themeName, setThemeName }}>
+      <ThemeProvider theme={theme}>
         <AppBar />
         <CssBaseline />
         <Routes>

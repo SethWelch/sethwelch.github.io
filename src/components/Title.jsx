@@ -14,12 +14,12 @@ function Title({ children }) {
             fontSize: 40,
             fontWeight: 500,
             fontFamily: "permanent marker",
-            color: theme.palette.mode === "light" ? "black" : "white",
+            color: theme.palette.text.primary,
           }}
         >
           {children}
         </Typography>
-        <Box sx={{ width: "100%", height: 5, background: "blueviolet" }} />
+        <Box sx={{ width: "100%", height: 5, background: theme.palette.primary.main }} />
       </Box>
     </Box>
   );

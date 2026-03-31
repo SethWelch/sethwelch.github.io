@@ -10,24 +10,22 @@ function ProjectCard({ title, body, chips, links, image }) {
   return (
     <Box
       sx={{
-        height: 430,
-        width: 380,
-        border: '1px solid grey',
+        width: { xs: '100%', sm: 360 },
+        maxWidth: 400,
+        border: `1px solid ${theme.palette.divider}`,
         borderRadius: '8px',
         padding: 1,
+        pb: 6,
         position: 'relative',
-        background: theme.palette.mode === 'light' ? 'lavender' : '#2f406a',
-        '@media (max-height: 480px)': {
-          scale: '80%',
-        },
+        background: theme.palette.background.paper,
       }}
     >
       <Box sx={{ display: 'flex', justifyContent: 'center' }}>{image}</Box>
       <Box sx={{ padding: 1 }}>
-        <Typography sx={{ fontWeight: '600', fontSize: 20 }}>
+        <Typography sx={{ fontWeight: '600', fontSize: 20, color: theme.palette.text.primary }}>
           {title}
         </Typography>
-        <Typography sx={{ mt: 0.5, fontSize: 16, height: 48 }}>
+        <Typography sx={{ mt: 0.5, fontSize: 16, height: 48, color: theme.palette.text.primary }}>
           {body}
         </Typography>
         <Box
@@ -40,7 +38,7 @@ function ProjectCard({ title, body, chips, links, image }) {
         >
           {links.map((l, i) => {
             return (
-              <Link href={l} target="_blank" key={`Link-${i}`}>
+              <Link href={l} target="_blank" key={`Link-${i}`} sx={{ color: theme.palette.primary.main }}>
                 {i === 0 ? 'Website' : 'Github'}
               </Link>
             )

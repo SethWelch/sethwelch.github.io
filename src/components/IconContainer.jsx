@@ -1,15 +1,12 @@
-import { Box, Grid, Typography } from '@mui/material'
-
+import { Box, Typography } from '@mui/material'
 import PropTypes from 'prop-types'
 
 function IconContainer({ text, children }) {
   return (
-    <Grid item xs={3} sx={{ display: 'flex', justifyContent: 'center' }}>
-      <Box sx={{ textAlign: 'center' }}>
-        {children}
-        <Typography sx={{ textAlign: 'center' }}>{text}</Typography>
-      </Box>
-    </Grid>
+    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 1, width: 90, mb: 2 }}>
+      {children}
+      <Typography sx={{ textAlign: 'center', fontSize: '0.8rem' }}>{text}</Typography>
+    </Box>
   )
 }
 
