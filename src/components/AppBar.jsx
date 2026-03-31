@@ -19,8 +19,8 @@ import MenuIcon from '@mui/icons-material/Menu'
 import PropTypes from 'prop-types'
 
 import Brightness4Icon from '@mui/icons-material/Brightness4'
-import { useRecoilState } from 'recoil'
-import { themeState } from '../recoil/atom/themeAtom'
+import { useContext } from 'react'
+import { ThemeContext } from '../App'
 import { useTheme } from '@emotion/react'
 
 const drawerWidth = 240
@@ -34,7 +34,7 @@ const navItems = [
 function AppBar(props) {
   const { window } = props
   const [mobileOpen, setMobileOpen] = React.useState(false)
-  const [theme, setTheme] = useRecoilState(themeState)
+  const { mode: theme, setMode: setTheme } = useContext(ThemeContext)
 
   const muiTheme = useTheme()
 

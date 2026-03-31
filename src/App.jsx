@@ -5,11 +5,11 @@ import Home from "./pages/Home.jsx";
 import "./App.css";
 import { ThemeProvider, createTheme } from "@mui/material";
 import AppBar from "./components/AppBar.jsx";
-import React, { useEffect } from "react";
+import React, { createContext, useState } from "react";
 
 import CssBaseline from "@mui/material/CssBaseline";
-import { useRecoilValue } from "recoil";
-import { themeState } from "./recoil/atom/themeAtom.js";
+
+export const ThemeContext = createContext(null);
 
 const darkTheme = createTheme({
   palette: {
@@ -46,21 +46,17 @@ const lightTheme = createTheme({
 });
 
 export default function App() {
-  const [mode, setMode] = React.useState();
-
-  const theme = useRecoilValue(themeState);
-
-  useEffect(() => {
-    if (theme) setMode(theme);
-  }, [theme]);
+  const [mode, setMode] = useState(() => localStorage.getItem('theme') ?? 'dark');
 
   return (
-    <ThemeProvider theme={mode === "light" ? lightTheme : darkTheme}>
-      <AppBar />
-      <CssBaseline />
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </ThemeProvider>
+    <ThemeContext.Provider value={{ mode, setMode }}>
+      <ThemeProvider theme={mode === "light" ? lightTheme : darkTheme}>
+        <AppBar />
+        <CssBaseline />
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </ThemeProvider>
+    </ThemeContext.Provider>
   );
 }
