@@ -188,26 +188,23 @@ const experience = [
   },
 ];
 
-const primarySkills = [
+const skills = [
   { text: "React", icon: ReactIcon },
   { text: "Javascript", icon: JavascriptIcon },
-  { text: "Material UI", icon: MaterialUiIcon },
-  { text: "CSS", icon: CssIcon },
+  { text: "Typescript", icon: TypescriptIcon },
   { text: "Node", icon: NodeJsIcon },
+  { text: "CSS", icon: CssIcon },
   { text: "Postgres", icon: PostgresIcon },
-  { text: "Figma", icon: FigmaOriginal },
+  { text: "Material UI", icon: MaterialUiIcon },
   { text: "Redux", icon: ReduxIcon },
-];
-
-const additionalSkills = [
-  { text: "Bootstrap", icon: BootstrapIcon },
+  { text: "Figma", icon: FigmaOriginal },
   { text: "Docker", icon: DockerIcon },
-  { text: "Java", icon: JavaIcon },
-  { text: "Kotlin", icon: KotlinIcon },
+  { text: "Git", icon: GitIcon },
+  { text: "Bootstrap", icon: BootstrapIcon },
   { text: "MySQL", icon: MysqlIcon },
   { text: "Sequelize", icon: SequelizeIcon },
-  { text: "Typescript", icon: TypescriptIcon },
-  { text: "Git", icon: GitIcon },
+  { text: "Kotlin", icon: KotlinIcon },
+  { text: "Java", icon: JavaIcon },
 ];
 
 function ProjectCard({ title, body, chips, website, github, image }) {
@@ -412,7 +409,10 @@ function Home() {
               </Button>
               <Button
                 variant="outlined"
-                onClick={() => window.open("https://www.linkedin.com/in/seth-welch-89910897", "_blank")}
+                onClick={() => {
+                  const el = document.querySelector("#contact-box");
+                  if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 64, behavior: "smooth" });
+                }}
                 sx={{
                   borderColor: alpha(accent, 0.5),
                   color: accent,
@@ -426,20 +426,6 @@ function Home() {
               >
                 Get In Touch
               </Button>
-            </Box>
-            <Box sx={{ display: "flex", gap: 0.5, justifyContent: { xs: "center", md: "flex-start" } }}>
-              <IconButton
-                aria-label="LinkedIn"
-                onClick={() => window.open("https://www.linkedin.com/in/seth-welch-89910897", "_blank")}
-              >
-                <img src={LinkedinIcon} alt="LinkedIn" style={{ height: 24, filter: iconFilter }} />
-              </IconButton>
-              <IconButton
-                aria-label="GitHub"
-                onClick={() => window.open("https://github.com/SethWelch", "_blank")}
-              >
-                <img src={GithubIcon} alt="GitHub" style={{ height: 24, filter: iconFilter }} />
-              </IconButton>
             </Box>
           </Box>
 
@@ -615,7 +601,7 @@ function Home() {
         <Box
           sx={{
             display: "grid",
-            gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", xl: "repeat(4, 1fr)" },
+            gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)" },
             gap: 3,
             mt: 5,
           }}
@@ -636,31 +622,54 @@ function Home() {
             justifyContent: "center",
             gap: { xs: 2, sm: 3 },
             mt: 5,
-            mb: 8,
           }}
         >
-          {primarySkills.map(({ text, icon }) => (
+          {skills.map(({ text, icon }) => (
             <IconContainer key={text} text={text}>
               <img src={icon} alt={text} style={{ height: 48 }} />
             </IconContainer>
           ))}
         </Box>
+      </Section>
 
-        <Title>Additional Skills</Title>
-        <Box
-          sx={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            gap: { xs: 2, sm: 3 },
-            mt: 5,
-          }}
-        >
-          {additionalSkills.map(({ text, icon }) => (
-            <IconContainer key={text} text={text}>
-              <img src={icon} alt={text} style={{ height: 48 }} />
-            </IconContainer>
-          ))}
+      {/* ── Contact ────────────────────────────────────────────── */}
+      <Section id="contact-box">
+        <Box sx={{ maxWidth: 480, mx: "auto", textAlign: "center" }}>
+          <Title>Get In Touch</Title>
+          <Typography sx={{ mt: 3, mb: 4, lineHeight: 1.9, fontSize: "1rem", color: theme.palette.text.secondary }}>
+            Feel free to reach out — whether it&apos;s about a project, a question, or just to say hello.
+          </Typography>
+          <Button
+            variant="contained"
+            href="mailto:sethwelch85@gmail.com"
+            sx={{
+              background: accent,
+              color: theme.palette.getContrastText(accent),
+              fontWeight: 700,
+              px: 4,
+              py: 1.25,
+              borderRadius: 2,
+              textTransform: "none",
+              fontSize: "1rem",
+              "&:hover": { background: alpha(accent, 0.85) },
+            }}
+          >
+            sethwelch85@gmail.com
+          </Button>
+          <Box sx={{ display: "flex", gap: 1, justifyContent: "center", mt: 3 }}>
+            <IconButton
+              aria-label="LinkedIn"
+              onClick={() => window.open("https://www.linkedin.com/in/seth-welch-89910897", "_blank")}
+            >
+              <img src={LinkedinIcon} alt="LinkedIn" style={{ height: 24, filter: iconFilter }} />
+            </IconButton>
+            <IconButton
+              aria-label="GitHub"
+              onClick={() => window.open("https://github.com/SethWelch", "_blank")}
+            >
+              <img src={GithubIcon} alt="GitHub" style={{ height: 24, filter: iconFilter }} />
+            </IconButton>
+          </Box>
         </Box>
       </Section>
     </>
