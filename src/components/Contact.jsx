@@ -31,7 +31,6 @@ export default function Contact() {
             border: `1px solid ${alpha(accent, 0.25)}`,
             borderRadius: 4,
             background: theme.palette.background.paper,
-            boxShadow: `0 30px 80px -30px ${alpha(accent, 0.25)}`,
           }}
         >
           <Eyebrow>Contact</Eyebrow>

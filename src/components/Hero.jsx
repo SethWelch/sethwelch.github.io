@@ -32,10 +32,25 @@ export default function Hero() {
   const accent = theme.palette.primary.main
 
   return (
-    <Box component="section" id="hero" sx={{ py: { xs: 8, md: 12 } }}>
+    <Box component="section" id="hero" sx={{ position: 'relative', overflow: 'hidden', py: { xs: 8, md: 12 } }}>
+      {/* Faint grid that fades out toward the edges and the bottom of the hero. */}
+      <Box
+        aria-hidden
+        sx={{
+          position: 'absolute',
+          inset: 0,
+          pointerEvents: 'none',
+          backgroundImage: `linear-gradient(${alpha(text, 0.04)} 1px, transparent 1px), linear-gradient(90deg, ${alpha(text, 0.04)} 1px, transparent 1px)`,
+          backgroundSize: '48px 48px',
+          backgroundPosition: 'center top',
+          maskImage: 'radial-gradient(ellipse 75% 65% at 50% 25%, #000 30%, transparent 100%)',
+          WebkitMaskImage: 'radial-gradient(ellipse 75% 65% at 50% 25%, #000 30%, transparent 100%)',
+        }}
+      />
       <Container
         maxWidth="lg"
         sx={{
+          position: 'relative',
           display: 'flex',
           flexDirection: { xs: 'column-reverse', md: 'row' },
           alignItems: { xs: 'flex-start', md: 'center' },
@@ -78,7 +93,7 @@ export default function Hero() {
             <Box component="span" sx={{ display: 'block', color: text }}>
               Seth Welch
             </Box>
-            <Box component="span" sx={{ display: 'block', color: alpha(text, 0.55) }}>
+            <Box component="span" sx={{ display: 'block', color: theme.palette.text.secondary }}>
               Founding Engineer &amp; Engineering Lead.
             </Box>
           </Typography>
@@ -161,21 +176,46 @@ export default function Hero() {
           </Box>
         </Box>
 
-        <Box
-          component="img"
-          src={PortraitImage}
-          alt="Seth Welch"
-          sx={{
-            flexShrink: 0,
-            width: { xs: 140, sm: 180, md: 320 },
-            height: { xs: 140, sm: 180, md: 320 },
-            borderRadius: '50%',
-            objectFit: 'cover',
-            objectPosition: 'center top',
-            border: `1px solid ${subtle}`,
-            boxShadow: `0 0 0 6px ${alpha(text, 0.03)}, 0 24px 60px ${alpha(accent, 0.12)}`,
-          }}
-        />
+        <Box sx={{ position: 'relative', flexShrink: 0 }}>
+          {/* One soft glow, centred on the portrait so it moves with it. */}
+          <Box
+            aria-hidden
+            sx={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              width: { xs: 360, md: 640 },
+              height: { xs: 360, md: 640 },
+              transform: 'translate(-50%, -50%)',
+              pointerEvents: 'none',
+              background: `radial-gradient(circle, ${alpha(accent, 0.12)} 0%, transparent 65%)`,
+            }}
+          />
+          <Box
+            sx={{
+              position: 'relative',
+              p: { xs: 1, md: 1.5 },
+              borderRadius: { xs: 3, md: 4 },
+              border: `1px solid ${alpha(accent, 0.25)}`,
+              background: alpha(theme.palette.background.paper, 0.7),
+              backdropFilter: 'blur(6px)',
+            }}
+          >
+            <Box
+              component="img"
+              src={PortraitImage}
+              alt="Seth Welch"
+              sx={{
+                display: 'block',
+                width: { xs: 132, sm: 168, md: 300 },
+                height: { xs: 132, sm: 168, md: 300 },
+                borderRadius: '50%',
+                objectFit: 'cover',
+                objectPosition: 'center top',
+              }}
+            />
+          </Box>
+        </Box>
       </Container>
     </Box>
   )
