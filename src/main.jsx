@@ -5,8 +5,6 @@ import { BrowserRouter } from 'react-router-dom'
 
 import App from './App.jsx'
 
-import '@fontsource/permanent-marker'
-
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
 root.render(

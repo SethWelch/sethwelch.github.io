@@ -1,6 +1,11 @@
 import { createContext } from "react";
 import { createTheme } from "@mui/material";
 
+export const FONT_SANS = "\"Inter\", system-ui, -apple-system, sans-serif";
+export const FONT_MONO = "\"JetBrains Mono\", ui-monospace, SFMono-Regular, monospace";
+
+const typography = { fontFamily: FONT_SANS };
+
 export const ThemeContext = createContext(null);
 
 export const THEMES = {
@@ -8,6 +13,7 @@ export const THEMES = {
     label: "Cosmos",
     swatch: "#64ffda",
     muiTheme: createTheme({
+      typography,
       palette: {
         mode: "dark",
         primary: { main: "#64ffda" },
@@ -23,6 +29,7 @@ export const THEMES = {
     label: "Synthwave",
     swatch: "#ff2d78",
     muiTheme: createTheme({
+      typography,
       palette: {
         mode: "dark",
         primary: { main: "#ff2d78" },
@@ -38,6 +45,7 @@ export const THEMES = {
     label: "Nord",
     swatch: "#88c0d0",
     muiTheme: createTheme({
+      typography,
       palette: {
         mode: "dark",
         primary: { main: "#88c0d0" },
@@ -53,6 +61,7 @@ export const THEMES = {
     label: "Slate",
     swatch: "#7c3aed",
     muiTheme: createTheme({
+      typography,
       palette: {
         mode: "light",
         primary: { main: "#7c3aed" },
