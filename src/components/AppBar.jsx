@@ -19,7 +19,7 @@ import MenuIcon from '@mui/icons-material/Menu'
 
 import PropTypes from 'prop-types'
 
-import { ThemeContext, THEMES } from '../App'
+import { ThemeContext, THEMES } from '../themes.js'
 import { useTheme } from '@emotion/react'
 
 const drawerWidth = 240
