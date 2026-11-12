@@ -14,13 +14,13 @@ Helena, MT · sethwelch85@gmail.com · sethwelch.com · linkedin.com/in/seth-wel
 Founding engineer and engineering lead with 11+ years building full-stack
 products from zero to scale. Currently founding engineer at Ascension, where I
 lead the SOC 2 program and daily engineering operations, and founder of Vesta
-Shops, a multi-location inventory and point-of-sale platform. Strongest where
+Software, maker of Vesta Shops, a multi-location inventory and point-of-sale platform. Strongest where
 architecture, security and team leadership meet.
 
 ## Experience
 
-### Founder & Lead Engineer — Vesta Shops LLC · Aug 2026 – Present
-- Founded and built a multi-location inventory and point-of-sale SaaS platform: React, TypeScript, Node.js (Fastify) and PostgreSQL.
+### Founder & Lead Engineer — Vesta Software LLC · Aug 2026 – Present
+- Founded and built Vesta Shops, a multi-location inventory and point-of-sale SaaS platform: React, TypeScript, Node.js (Fastify) and PostgreSQL.
 - Designed an append-only inventory system so that changes do not mean lost data. Every change is traceable.
 - Built a shared till basket that syncs between a phone scanner and the counter and keeps working through connection drops.
 - Added stocktakes (taking inventory) with reporting, inter-store inventory transfers, card and cash checkout, and an internal calendar system for tracking shipments and schedules.

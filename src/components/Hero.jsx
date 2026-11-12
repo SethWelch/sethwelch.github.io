@@ -112,7 +112,7 @@ export default function Hero() {
                 '&:hover': { textDecorationColor: accent },
               }}
             >
-              Vesta Shops LLC
+              Vesta Software LLC
             </Link>
             .
           </Typography>

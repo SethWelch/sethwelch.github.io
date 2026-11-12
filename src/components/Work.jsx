@@ -183,7 +183,7 @@ function FlagshipCard() {
                 color: accent,
               }}
             >
-              Founder &amp; Lead Engineer · Vesta Shops LLC
+              Founder &amp; Lead Engineer · Vesta Software LLC
             </Box>
             <Typography sx={{ fontSize: '0.9rem', color: muted }}>vestashops.com</Typography>
           </Box>
