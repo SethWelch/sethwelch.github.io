@@ -19,7 +19,7 @@ function fullYearsSince(start) {
 }
 
 const stats = [
-  { value: `${fullYearsSince(CAREER_START)}+`, label: 'Years shipping' },
+  { value: `${fullYearsSince(CAREER_START)}+`, label: 'Years building software' },
   { value: '3x', label: 'Founding engineer' },
   { value: 'SOC 2', label: 'Program led' },
 ]

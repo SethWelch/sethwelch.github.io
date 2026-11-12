@@ -358,7 +358,7 @@ export default function Work() {
         <FlagshipCard />
 
         <Box sx={{ mt: { xs: 10, md: 14 } }}>
-          <SectionHeading eyebrow="Selected work" title="More things I've built" />
+          <SectionHeading eyebrow="Selected work" title="Other projects" />
           <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: 3 }}>
             {otherWork.map((w) => (
               <WorkCard key={w.title} {...w} />

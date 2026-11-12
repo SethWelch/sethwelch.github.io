@@ -238,7 +238,7 @@ export default function Experience() {
   return (
     <Box component="section" id="experience-box" sx={{ py: { xs: 8, md: 12 } }}>
       <Container maxWidth="lg">
-        <SectionHeading eyebrow="Leadership & experience" title="A decade of shipping, from IC to lead" />
+        <SectionHeading eyebrow="Leadership & experience" title="A decade of building" />
 
         <Box sx={{ position: 'relative', pl: { xs: 0, md: 4 } }}>
           <Box
