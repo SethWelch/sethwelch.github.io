@@ -59,7 +59,6 @@ const jobs = [
   },
   {
     company: 'Stage',
-    location: 'Hayden, Idaho · Remote',
     roles: [{ title: 'Founding Engineer', start: [2022, 1], end: [2023, 12] }],
     categories: [
       {
@@ -149,15 +148,8 @@ function JobCard({ job }) {
           <Typography component="h3" sx={{ fontSize: '1.15rem', fontWeight: 600, color: text }}>
             {promoted ? job.company : current.title}
           </Typography>
-          <Typography sx={{ fontSize: '0.9rem', mt: 0.25 }}>
-            <Box component="span" sx={{ color: accent }}>
-              {promoted ? 'Promoted to Senior' : job.company}
-            </Box>
-            {job.location && (
-              <Box component="span" sx={{ color: muted }}>
-                {' '}· {job.location}
-              </Box>
-            )}
+          <Typography sx={{ fontSize: '0.9rem', mt: 0.25, color: accent }}>
+            {promoted ? 'Promoted to Senior' : job.company}
           </Typography>
         </Box>
         <Typography sx={{ fontFamily: FONT_MONO, fontSize: '0.75rem', color: muted, pt: 0.5 }}>

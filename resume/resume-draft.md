@@ -7,7 +7,7 @@
 
 **Seth Welch**
 Founding Engineer & Engineering Lead
-Hayden, ID · sethwelch85@gmail.com · sethwelch.com · linkedin.com/in/seth-welch-89910897 · github.com/SethWelch
+Helena, MT · sethwelch85@gmail.com · sethwelch.com · linkedin.com/in/seth-welch-89910897 · github.com/SethWelch
 
 ## Summary
 
