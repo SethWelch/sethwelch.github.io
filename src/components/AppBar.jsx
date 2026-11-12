@@ -17,7 +17,7 @@ import { alpha, useTheme } from '@mui/material/styles'
 import MenuIcon from '@mui/icons-material/Menu'
 
 import { FONT_MONO } from '../themes.js'
-import { EMAIL, NAV_HEIGHT, scrollToSection } from '../site.js'
+import { EMAIL, NAV_HEIGHT, RESUME_URL, scrollToSection } from '../site.js'
 
 const navItems = [
   { label: 'Work', id: 'work' },
@@ -50,6 +50,24 @@ export default function AppBar() {
       }}
     >
       Email
+    </Button>
+  )
+
+  const resumeLink = (
+    <Button
+      href={RESUME_URL}
+      target="_blank"
+      rel="noopener"
+      sx={{
+        textTransform: 'none',
+        fontWeight: 400,
+        fontSize: '0.9rem',
+        color: muted,
+        px: 1.5,
+        '&:hover': { color: theme.palette.text.primary, background: 'transparent' },
+      }}
+    >
+      Résumé
     </Button>
   )
 
@@ -107,7 +125,10 @@ export default function AppBar() {
             </Box>
 
             <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
-              <Box sx={{ display: { xs: 'none', sm: 'block' } }}>{emailButton}</Box>
+              <Box sx={{ display: { xs: 'none', sm: 'flex' }, alignItems: 'center', gap: 1 }}>
+                {resumeLink}
+                {emailButton}
+              </Box>
               <IconButton
                 aria-label="Open menu"
                 onClick={() => setMobileOpen(true)}
@@ -144,7 +165,14 @@ export default function AppBar() {
             </ListItem>
           ))}
         </List>
-        <Box sx={{ px: 2 }}>{emailButton}</Box>
+        <List disablePadding>
+          <ListItem disablePadding>
+            <ListItemButton component="a" href={RESUME_URL} target="_blank" rel="noopener">
+              <ListItemText primary="Résumé" />
+            </ListItemButton>
+          </ListItem>
+        </List>
+        <Box sx={{ px: 2, pt: 1 }}>{emailButton}</Box>
       </Drawer>
     </>
   )

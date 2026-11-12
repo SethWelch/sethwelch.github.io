@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Seth Welch — Résumé</title>
+<!-- Static (non-variable) font files: Chrome's PDF output breaks words apart in
+     the text layer when given Google Fonts' variable Inter. -->
+<link rel="stylesheet" href="../node_modules/@fontsource/inter/400.css">
+<link rel="stylesheet" href="../node_modules/@fontsource/inter/500.css">
+<link rel="stylesheet" href="../node_modules/@fontsource/inter/600.css">
+<link rel="stylesheet" href="../node_modules/@fontsource/inter/700.css">
+<link rel="stylesheet" href="../node_modules/@fontsource/jetbrains-mono/400.css">
+<link rel="stylesheet" href="../node_modules/@fontsource/jetbrains-mono/500.css">
+<style>
+  @page { size: Letter; margin: 0.55in 0.6in; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #10151c;
+    --body: #333b45;
+    --muted: #66717d;
+    --rule: #dde2e7;
+    --accent: #0e7f91;
+  }
+  body {
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 9.6pt;
+    line-height: 1.45;
+    color: var(--body);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    /* Kerning, ligatures and contextual alternates make Chrome position text in
+       fragments, which PDF readers and applicant-tracking systems then extract as
+       broken words. Plain glyph runs keep the text layer clean. */
+    font-kerning: none;
+    font-variant-ligatures: none;
+    font-feature-settings: "kern" 0, "liga" 0, "calt" 0;
+    text-rendering: optimizeSpeed;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  header { padding-bottom: 12pt; border-bottom: 2pt solid var(--accent); }
+  h1 { font-size: 24pt; font-weight: 700; line-height: 1.1; color: var(--ink); }
+  .role { margin-top: 2pt; font-size: 12pt; font-weight: 500; color: var(--muted); }
+  .contact {
+    margin-top: 7pt;
+    font-size: 8.6pt;
+    white-space: nowrap;
+    color: var(--muted);
+  }
+  .contact span + span::before { content: "·"; margin: 0 6pt; color: var(--rule); }
+
+  section { margin-top: 13pt; }
+  h2 {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 8pt;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6pt;
+  }
+  .summary { color: var(--body); }
+
+  .job { margin-top: 10pt; break-inside: avoid; }
+  .job:first-of-type { margin-top: 0; }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12pt; }
+  .job-title { font-size: 10.5pt; font-weight: 600; color: var(--ink); }
+  .job-title .company { color: var(--accent); font-weight: 600; }
+  .dates {
+    flex-shrink: 0;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 7.8pt;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .location { font-size: 8.4pt; color: var(--muted); }
+  .roles { margin-top: 2pt; }
+  .roles div { display: flex; justify-content: space-between; gap: 12pt; }
+  .roles .t { font-weight: 500; color: var(--ink); }
+
+  h3 {
+    margin-top: 5pt;
+    font-size: 8pt;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  /* Native list markers, not a positioned ::before: browsers paint positioned
+     boxes in a later pass, which put every bullet's text at the end of the PDF
+     and scrambled the reading order applicant-tracking systems see. */
+  ul { margin-top: 3pt; padding-left: 11pt; list-style: disc outside; }
+  li { margin-top: 2pt; padding-left: 1pt; }
+  li::marker { color: var(--accent); font-size: 0.85em; }
+
+  .skills div { margin-top: 2pt; }
+  .skills b { font-weight: 600; color: var(--ink); }
+  .edu { display: flex; justify-content: space-between; gap: 12pt; }
+  .edu b { font-weight: 600; color: var(--ink); }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Seth Welch</h1>
+    <div class="role">Founding Engineer &amp; Engineering Lead</div>
+    <div class="contact">
+      <span>Hayden, ID</span>
+      <span><a href="mailto:sethwelch85@gmail.com">sethwelch85@gmail.com</a></span>
+      <span><a href="https://www.sethwelch.com">sethwelch.com</a></span>
+      <span><a href="https://www.linkedin.com/in/seth-welch-89910897">linkedin.com/in/seth-welch-89910897</a></span>
+      <span><a href="https://github.com/SethWelch">github.com/SethWelch</a></span>
+    </div>
+  </header>
+
+  <section>
+    <h2>Summary</h2>
+    <p class="summary">
+      Founding engineer and engineering lead with 11+ years building full-stack products from zero to scale.
+      Currently founding engineer at Ascension, leading the SOC 2 program and daily engineering operations,
+      and founder of Vesta Shops, a multi-location inventory and point-of-sale platform. Strongest where
+      architecture, security and team leadership meet.
+    </p>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+
+    <div class="job">
+      <div class="job-head">
+        <div class="job-title">Founder &amp; Lead Engineer · <span class="company">Vesta Shops LLC</span></div>
+        <div class="dates">Aug 2026 – Present</div>
+      </div>
+      <ul>
+        <li>Founded and built a multi-location inventory and point-of-sale SaaS platform: React, TypeScript, Node.js (Fastify) and PostgreSQL.</li>
+        <li>Designed an append-only inventory system so that changes do not mean lost data. Every change is traceable.</li>
+        <li>Built a shared till basket that syncs between a phone scanner and the counter and keeps working through connection drops.</li>
+        <li>Added stocktakes (taking inventory) with reporting, inter-store inventory transfers, card and cash checkout, and an internal calendar system for tracking shipments and schedules.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div class="job-title">Founding Engineer · <span class="company">Ascension</span></div>
+        <div class="dates">Jan 2025 – Present</div>
+      </div>
+      <h3>Security &amp; Compliance</h3>
+      <ul>
+        <li>Led the company's second consecutive SOC 2 Type II audit to successful completion with zero major findings.</li>
+        <li>Lead the company's SOC 2 compliance program: vulnerability management, penetration testing, vendor risk assessments, and continuous Vanta monitoring.</li>
+        <li>One of two engineers who built the company's infrastructure and security architecture: encryption at rest and in transit, MFA enforcement, Redis-backed sessions, and role-based access control.</li>
+        <li>Own the company's security checks and serve as the point of contact for penetration testers and SOC 2 compliance partners.</li>
+      </ul>
+      <h3>Engineering</h3>
+      <ul>
+        <li>Designed and built the full application stack from scratch: React and Tailwind frontend, Node.js and TypeORM backend, PostgreSQL database.</li>
+        <li>Engineered domain-specific calculation engines requiring high accuracy across multiple interdependent variables.</li>
+        <li>Built and maintain multiple customer-facing product surfaces, including authenticated application experiences and public-facing tools.</li>
+      </ul>
+      <h3>Leadership &amp; Operations</h3>
+      <ul>
+        <li>Own the engineering hiring pipeline: first point of contact for candidates, co-organized the technical assessments, run background checks, and handle candidate outreach.</li>
+        <li>Lead daily engineering standups, driving prioritization and cross-functional communication using a Kanban workflow.</li>
+        <li>Onboard and mentor incoming senior engineers, establishing technical context and development workflows.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div class="job-title">Engineering Team Lead · <span class="company">Themis</span></div>
+        <div class="dates">Jan 2024 – Dec 2024</div>
+      </div>
+      <div class="location">New York, NY (Remote)</div>
+      <ul>
+        <li>Led a ground-up rewrite of the frontend, replacing a monolithic, inconsistent codebase with a component-based React and Tailwind architecture.</li>
+        <li>Established the company's design system and component library, bringing consistency and reusable patterns across the product.</li>
+        <li>Improved site performance by more than 50% through architectural changes and frontend best practices.</li>
+        <li>Led daily standups and owned sprint-level prioritization; primary liaison between engineering, product, and design.</li>
+        <li>Held biweekly one-on-ones with direct reports, supporting individual growth and team health.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div class="job-title">Founding Engineer · <span class="company">Stage</span></div>
+        <div class="dates">Jan 2022 – Dec 2023</div>
+      </div>
+      <div class="location">San Francisco, CA (Remote)</div>
+      <ul>
+        <li>One of five engineers working directly with two C-level founders; built the first version of a SaaS platform letting businesses control and monetize features within their own sites, shipped to two paying customers.</li>
+        <li>Owned the full stack: React frontend, Kotlin backend, and PostgreSQL schema design and migrations.</li>
+        <li>Participated in core architectural decisions and worked with the designer in Figma on an experience built for non-technical business users.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div class="job-title"><span class="company">SoFi</span></div>
+        <div class="dates">May 2015 – Jan 2022</div>
+      </div>
+      <div class="location">Helena, MT (Hybrid, then Remote)</div>
+      <div class="roles">
+        <div><span class="t">Senior Software Engineer</span><span class="dates">Oct 2019 – Jan 2022</span></div>
+        <div><span class="t">Software Engineer</span><span class="dates">May 2015 – Oct 2019</span></div>
+        <div><span class="t">Technical Trainer (concurrent)</span><span class="dates">Sep 2017 – Oct 2018</span></div>
+      </div>
+      <ul>
+        <li>Led the frontend rewrite of an internal application, replacing a JavaScript and Pug frontend with React and Redux on the existing backend.</li>
+        <li>Built internal tooling and developer-productivity software across Node.js, React, Redux, Postgres, Kubernetes, and ActiveMQ.</li>
+        <li>Worked with the Communications team on a Live Chat solution and Kafka integration across Java, Spring Boot, PHP, and MySQL.</li>
+        <li>Interviewed senior and staff-level engineering candidates and gave hiring recommendations; mentored junior engineers through guidance and code reviews.</li>
+        <li>As Technical Trainer, expanded first-week onboarding (Kafka, logging, SBT, Gradle, Git, coding standards) and created a second-week full-stack program for new engineers.</li>
+        <li>Organized knowledge-sharing sessions for all engineers and selected the secure programming training program.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="skills">
+    <h2>Skills</h2>
+    <div><b>Leadership:</b> team leadership, hiring and interviewing, mentoring, technical training, cross-functional delivery</div>
+    <div><b>Security &amp; compliance:</b> SOC 2 Type II, Vanta, vulnerability management, penetration testing, vendor risk, RBAC, MFA</div>
+    <div><b>Frontend:</b> React, TypeScript, JavaScript, Redux, Tailwind, design systems, Figma</div>
+    <div><b>Backend &amp; data:</b> Node.js, TypeORM, Kotlin, Java, Spring Boot, PostgreSQL, MySQL, Redis, Kafka, Kubernetes</div>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="edu">
+      <div><b>B.S. Computer Science</b> — The University of Montana, Missoula, MT</div>
+      <div class="dates">May 2015</div>
+    </div>
+  </section>
+</body>
+</html>

@@ -22,13 +22,13 @@ const jobs = [
         name: 'Security & Compliance',
         bullets: [
           "Lead the company's SOC 2 compliance program, maintaining compliance across vulnerability management, penetration testing, vendor risk assessments, and Vanta compliance monitoring.",
-          'Implemented end-to-end security architecture: encryption at rest and in transit, MFA enforcement, Redis-backed session management, and role-based access control.',
+          "One of two engineers who built the company's infrastructure and security architecture: encryption at rest and in transit, MFA enforcement, Redis-backed session management, and role-based access control.",
         ],
       },
       {
         name: 'Leadership & Operations',
         bullets: [
-          'Assisted with the full engineering hiring pipeline: sourcing, technical interviews, and background verification.',
+          'Own the engineering hiring pipeline: first point of contact for candidates, co-organized the technical assessments, run background checks, and handle candidate outreach.',
           'Lead daily engineering standups, driving task prioritization and cross-functional communication using a Kanban workflow.',
           'Onboard and mentor incoming senior engineers, establishing technical context and development workflows.',
         ],
@@ -44,7 +44,7 @@ const jobs = [
         bullets: [
           'Led a ground-up rewrite of the frontend, replacing a monolithic, inconsistent codebase with a component-based React and Tailwind architecture.',
           "Established the company's design system and component library, bringing visual consistency and reusable patterns across the product.",
-          'Drove meaningful performance improvements through architectural changes and frontend best practices.',
+          'Improved site performance by more than 50% through architectural changes and frontend best practices.',
         ],
       },
       {

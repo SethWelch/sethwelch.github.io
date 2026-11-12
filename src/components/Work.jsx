@@ -5,16 +5,17 @@ import ViewInArOutlined from '@mui/icons-material/ViewInArOutlined'
 import AssignmentOutlined from '@mui/icons-material/AssignmentOutlined'
 import QrCodeScannerOutlined from '@mui/icons-material/QrCodeScannerOutlined'
 import EditCalendarOutlined from '@mui/icons-material/EditCalendarOutlined'
-import DevicesOutlined from '@mui/icons-material/DevicesOutlined'
-import WifiOffOutlined from '@mui/icons-material/WifiOffOutlined'
-import StorageOutlined from '@mui/icons-material/StorageOutlined'
+import StorefrontOutlined from '@mui/icons-material/StorefrontOutlined'
+import AutoAwesomeOutlined from '@mui/icons-material/AutoAwesomeOutlined'
 import NorthEast from '@mui/icons-material/NorthEast'
 
 import { FONT_MONO } from '../themes.js'
-import SectionHeading, { Eyebrow } from './SectionHeading.jsx'
-import TransferImage from '../assets/images/vesta-transfer.webp'
+import SectionHeading from './SectionHeading.jsx'
+import InventoryImage from '../assets/images/vesta-inventory.webp'
 import PosImage from '../assets/images/vesta-pos.webp'
 import CalendarImage from '../assets/images/vesta-calendar.webp'
+import CatalogImage from '../assets/images/vesta-catalog.webp'
+import AssistantImage from '../assets/images/vesta-assistant.webp'
 
 const VESTA_URL = 'https://vestashops.com'
 
@@ -22,17 +23,17 @@ const features = [
   {
     icon: AssignmentOutlined,
     title: 'Multi-location stocktakes',
-    body: 'Count sheets per location with a variance report, and transfers between stores that track what was requested, shipped, and received.',
+    body: 'Stocktakes (taking inventory) at each location with reporting, plus inter-store inventory transfers.',
     preview: {
-      label: 'vesta / transfers',
-      image: TransferImage,
-      alt: 'A received transfer between two stores, showing requested, shipped and received quantities and a one-unit shortfall',
+      label: 'vesta / inventory',
+      image: InventoryImage,
+      alt: 'The Vesta inventory list: items with on-hand quantities, the locations holding them, stock status and price, with Take inventory and Transfers controls',
     },
   },
   {
     icon: QrCodeScannerOutlined,
     title: 'Real-time POS workflows',
-    body: 'Scan-to-cart checkout by camera or barcode scanner, card or cash payment, and stock that comes off the shelf in the same transaction as the sale.',
+    body: 'Scan items in by camera or barcode scanner, then check out with card or cash.',
     preview: {
       label: 'vesta / point of sale',
       image: PosImage,
@@ -42,30 +43,32 @@ const features = [
   {
     icon: EditCalendarOutlined,
     title: 'Shift & delivery scheduling',
-    body: 'Shifts, shipments, and store events in one shared calendar, with month, week, and day views and repeating events.',
+    body: 'An internal calendar system for tracking shipments and schedules.',
     preview: {
       label: 'vesta / calendar',
       image: CalendarImage,
       alt: 'A week on the Vesta calendar with stocktakes, shifts and a delivery pickup across two locations',
     },
   },
-]
-
-const problems = [
   {
-    icon: DevicesOutlined,
-    title: 'One basket, two devices',
-    body: 'Scan on a phone and the line appears on the till. Devices send individual edits, not whole baskets, so simultaneous changes both survive.',
+    icon: StorefrontOutlined,
+    title: 'Online catalog',
+    body: 'A public catalog where customers can see what is in stock, order online, and pick up in store.',
+    preview: {
+      label: 'vesta / catalog',
+      image: CatalogImage,
+      alt: 'A shop’s public catalog: product cards with photos, category, stock and price',
+    },
   },
   {
-    icon: WifiOffOutlined,
-    title: 'A till that survives dropouts',
-    body: 'When the connection drops, the basket keeps working locally. On reconnect it syncs automatically, and asks only if both sides changed.',
-  },
-  {
-    icon: StorageOutlined,
-    title: 'Multi-tenant PostgreSQL ledger',
-    body: 'An append-only, tenant-isolated stock ledger with row locking, so concurrent scans serialize instead of racing.',
+    icon: AutoAwesomeOutlined,
+    title: 'Built-in assistant',
+    body: 'Ask questions about stock and sales in plain English and get answers from the shop’s own data.',
+    preview: {
+      label: 'vesta / assistant',
+      image: AssistantImage,
+      alt: 'The Vesta assistant answering with a chart of the five most valuable games in stock',
+    },
   },
 ]
 
@@ -210,8 +213,7 @@ function FlagshipCard() {
       <Box
         sx={{
           display: 'grid',
-          gridTemplateColumns: { xs: '1fr', md: '5fr 7fr' },
-          borderBottom: `1px solid ${border}`,
+          gridTemplateColumns: { xs: '1fr', md: '4fr 8fr' },
         }}
       >
         <Box
@@ -240,7 +242,8 @@ function FlagshipCard() {
                   justifyContent: 'flex-start',
                   textAlign: 'left',
                   gap: 1.75,
-                  p: 2,
+                  px: 2,
+                  py: 1.5,
                   borderRadius: 2.5,
                   border: `1px solid ${selected ? alpha(accent, 0.45) : 'transparent'}`,
                   background: selected ? alpha(accent, 0.06) : 'transparent',
@@ -257,7 +260,7 @@ function FlagshipCard() {
           })}
         </Box>
 
-        <Box sx={{ p: { xs: 2, md: 4 } }}>
+        <Box sx={{ p: { xs: 2, md: 4 }, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
           <Box sx={{ border: `1px solid ${border}`, borderRadius: 3, background: surface, overflow: 'hidden' }}>
             <Box
               sx={{
@@ -276,7 +279,7 @@ function FlagshipCard() {
               </Box>
               <Typography sx={{ fontFamily: FONT_MONO, fontSize: '0.75rem', color: muted }}>{preview.label}</Typography>
             </Box>
-            <Box sx={{ position: 'relative', aspectRatio: '2416 / 1120', background: '#f6f5f0' }}>
+            <Box sx={{ position: 'relative', aspectRatio: '16 / 10', background: '#f6f5f0' }}>
               {features.map((f, i) => (
                 <Box
                   key={f.title}
@@ -300,23 +303,6 @@ function FlagshipCard() {
             </Box>
           </Box>
           <Typography sx={{ mt: 1.5, fontSize: '0.75rem', color: faint }}>Product screenshot · demo data</Typography>
-        </Box>
-      </Box>
-
-      {/* Hard problems */}
-      <Box sx={{ p: { xs: 2.5, md: 4 } }}>
-        <Eyebrow>Hard technical problems</Eyebrow>
-        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' }, gap: 2, mt: 2.5 }}>
-          {problems.map((p) => {
-            const Icon = p.icon
-            return (
-              <Box key={p.title} sx={{ p: 2.5, border: `1px solid ${border}`, borderRadius: 2.5, background: surface }}>
-                <Icon sx={{ fontSize: 22, color: accent, mb: 1.5 }} />
-                <Typography sx={{ fontSize: '1rem', fontWeight: 500, color: text, mb: 1 }}>{p.title}</Typography>
-                <Typography sx={{ fontSize: '0.875rem', lineHeight: 1.6, color: muted }}>{p.body}</Typography>
-              </Box>
-            )
-          })}
         </Box>
       </Box>
     </Box>

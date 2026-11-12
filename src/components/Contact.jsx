@@ -5,7 +5,7 @@ import LinkedIn from '@mui/icons-material/LinkedIn'
 import GitHub from '@mui/icons-material/GitHub'
 
 import { FONT_MONO } from '../themes.js'
-import { EMAIL } from '../site.js'
+import { EMAIL, RESUME_URL } from '../site.js'
 import { Eyebrow } from './SectionHeading.jsx'
 
 const socials = [
@@ -87,6 +87,25 @@ export default function Contact() {
               </IconButton>
             ))}
           </Box>
+
+          <Typography
+            component="a"
+            href={RESUME_URL}
+            target="_blank"
+            rel="noopener"
+            sx={{
+              display: 'inline-block',
+              mt: 3,
+              fontSize: '0.875rem',
+              color: muted,
+              textDecoration: 'underline',
+              textDecorationColor: alpha(accent, 0.5),
+              textUnderlineOffset: '4px',
+              '&:hover': { color: text, textDecorationColor: accent },
+            }}
+          >
+            View résumé (PDF)
+          </Typography>
         </Box>
 
         <Box
